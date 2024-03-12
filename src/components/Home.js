@@ -1,4 +1,5 @@
 const Home = () => (
+  
   <div>
     <h1>FRAMING NORAH</h1>
         <h4>Picture Hanger</h4>
