@@ -1,0 +1,18 @@
+/* FILEPATH: /Users/speirsy/Coding/My_Code_Projects/framing_norah_2/framing_norah/src/components/ContactForm.css */
+
+.show-hide-button {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.hidden-text {
+  display: none;
+}
+
+.show-hide-button.active + .hidden-text {
+  display: block;
+}
