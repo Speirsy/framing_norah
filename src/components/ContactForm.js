@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import './ContactForm.css';
 
 function ContactForm() {
     const [name, setName] = useState('');
@@ -63,23 +64,28 @@ function ContactForm() {
     
 
     return (
-        <div>
-            <p>Please tell us as much as you can about the work you would like done.</p>
-            <p>It will help us to give you a more accurate estimate.</p>
-            <p>Things we are interested to hear about -</p>
+
+        <div className='centered'>
+            <p>Please tell us as much as you can about the work you would like us to do.</p>
+            <p>It will help us to help you, and give you a more accurate estimate.</p>
+            <p>Click here for suggestions.-</p>
             <button onClick={() => setShowIdeas(!showIdeas)}>
-                {showIdeas ? 'Hide' : 'Reveal'} ideas
+                {showIdeas ? 'Hide' : ''} Food For Thought
             </button>
             {showIdeas && (
                 <ul>
-                    <li>How many items you would like hung or re-framed?</li>
-                    <li>What type of wall they are to be hung on?</li>
-                    <li>What type of frames you have</li>
-                    <li>What type of pictures you have</li>
-                    <li>What type of fixings you have</li>
-                    <li>What type of fixings you would like</li>
-                    <li>What type of wall you have</li>
-                    <li>What type of property you have</li>
+                    <li>What type of work you would like done?</li>
+                    <li>How many frames you would like hung?</li>
+                    <li>What are their approximate size and weight?</li>
+                    <li>What are your walls made of - Dry Wall? Lath and Plaster? Brick?</li>
+                    <li>Do you need the artwork adjusted in an existing frame?</li>
+                    <li>Does your artwork need a re-mounted?</li>
+                    <li>Does your frame need new glass? If so, approximately what size?</li>
+                    <li>These are just a few scenarios that we can help with.</li>
+                    <li>Feel free to tell us about the jobs you need done,in </li>
+                    <li>great detail, in the job description box below.</li>
+                    <li>We will assess and get back to you as soon as possible</li>
+
                 </ul>
             )}
             {submitted ? (

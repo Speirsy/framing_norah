@@ -1,4 +1,8 @@
 /* FILEPATH: /Users/speirsy/Coding/My_Code_Projects/framing_norah_2/framing_norah/src/components/ContactForm.css */
+.centered {
+  text-align: center;
+  margin-top: 50px; /* Adjust as needed */
+}
 
 .show-hide-button {
   background-color: #f0f0f0;

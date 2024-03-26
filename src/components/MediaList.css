@@ -1,0 +1,35 @@
+/* MediaList.css */
+
+.media-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .media-item {
+    margin: 10px;
+    text-align: center;
+  }
+  
+  .media-content {
+    max-width: 50%;
+    height: auto;
+  }
+  
+  .description {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .media-item:hover .description {
+    display: block;
+  }
