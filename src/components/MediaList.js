@@ -1,4 +1,8 @@
 // MediaList.js
+// This component displays a list of media items, including images and videos. 
+// It receives an array of media items as a prop and renders each item in a card-like format. 
+// Each card includes the media content (image or video), the media name, and a description.
+
 import React from 'react';
 import './MediaList.css';
 

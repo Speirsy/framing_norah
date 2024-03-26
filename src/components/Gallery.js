@@ -1,6 +1,4 @@
 // Gallery.js
-
-
 import React, { useEffect, useState } from 'react';
 import './Gallery.css';
 import { getMedia } from '../MediaRepository';

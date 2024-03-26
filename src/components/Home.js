@@ -1,5 +1,9 @@
 import React from 'react';
 import './Home.css';
+// import Gallery from './Gallery';
+// import { getMedia } from '../MediaRepository';
+// import MediaList from './MediaList';
+
 
 const Home = () => (
   
@@ -7,6 +11,13 @@ const Home = () => (
     <div className="centered">
       <h1>Framing Norah</h1>
       <h2>Picture Hanger</h2>
+      <h3>Art Installer</h3>
+{/* 
+      <MediaList media={pleanStPhotos} /> */}
+      {/* I want one image in here. I'd like to pull it using MediaList as I do in the Gallery.
+      Theres alot of gubbins including useEffect in Gallery.js. should I separate the Gallery gubbins for use 
+      throughout the site. How will I refactor? */}
+      
       <h4>Got Art hanging around?</h4>
       <h4>Get the Art Hanger round</h4>
       <p></p>
