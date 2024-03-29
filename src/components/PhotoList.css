@@ -1,0 +1,39 @@
+/* PhotoList.css */
+.photo-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .photo-item {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .photo-content {
+    width: 200px; /* Initial width of the photo */
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .photo-item:hover .photo-content {
+    transform: scale(1.2); /* Increase size on hover */
+  }
+  
+  .description-box {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+    padding: 10px;
+    color: #fff;
+    font-size: 14px;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .photo-item:hover .description-box {
+    opacity: 1; /* Show description on hover */
+  }

@@ -2,7 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import './Gallery.css';
 import { getMedia } from '../MediaRepository';
-import MediaList from './MediaList';
+import VideoList from './VideoList'; // Import the VideoList component
+import PhotoList from './PhotoList'; // Import the PhotoList component
 
 const Gallery = () => {
   const [media, setMedia] = useState([]);
@@ -22,9 +23,10 @@ const Gallery = () => {
 
     fetchMedia();
   }, []);
-  const largsVideos = media.filter((mediaItem) => mediaItem.portfolioGroup === 'LargsJobs');
-  const pleanStPhotos = media.filter((mediaItem) => mediaItem.portfolioGroup === 'pleanSt');
-  const framingJobs = media.filter((mediaItem) => mediaItem.portfolioGroup === 'framingJobs');
+
+  // Separate videos and photos
+  const videos = media.filter((mediaItem) => mediaItem.type === 'video');
+  const photos = media.filter((mediaItem) => mediaItem.type === 'photo');
 
   return (
     <div className='centered'>
@@ -36,14 +38,16 @@ const Gallery = () => {
           <p>Loading...</p>
         ) : (
           <div>
-            <MediaList media={largsVideos} />
-            <MediaList media={pleanStPhotos} />
+            {/* Render VideoList component for videos */}
+            <VideoList videos={videos} />
+            {/* Render PhotoList component for photos */}
+            <PhotoList photos={photos} />
           </div>
         )}
       </div>
     </div>
   );
 };
+
 export default Gallery;
-    
 

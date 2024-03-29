@@ -8,7 +8,10 @@ const getMedia = async () => {
     const mediaRef = collection(db, 'media');
     const mediaSnapshot = await getDocs(mediaRef);
     const mediaData = mediaSnapshot.docs.map(doc => doc.data());
+     // Print mediaData to the console
+    console.log('Media Data:', mediaData);
     return mediaData;
+   
   } catch (error) {
     console.error('Error fetching media:', error);
     throw error; // Re-throw the error for the caller to handle
