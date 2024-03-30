@@ -26,7 +26,11 @@ const Gallery = () => {
 
   // Separate videos and photos
   const videos = media.filter((mediaItem) => mediaItem.type === 'video');
-  const photos = media.filter((mediaItem) => mediaItem.type === 'photo');
+  // const photos = media.filter((mediaItem) => mediaItem.type === 'photo');
+  // const photosframing = media.filter((mediaItem) => mediaItem.type = 'photos' && mediaItem.portfolioGroup === 'LargsJobs');
+  // I want to add more filters to bring in different types of media. 
+  // const pleanStPhotos = media.filter((mediaItem) => mediaItem.portfolioGroup === 'pleanSt');
+  const beforeAfter = media.filter((mediaItem) => mediaItem.beforeAfter === 'paired');
 
   return (
     <div className='centered'>
@@ -37,12 +41,24 @@ const Gallery = () => {
         {loading ? (
           <p>Loading...</p>
         ) : (
-          <div>
+          <p>
+
             {/* Render VideoList component for videos */}
-            <VideoList videos={videos} />
             {/* Render PhotoList component for photos */}
-            <PhotoList photos={photos} />
-          </div>
+            <h1>Picture Framing</h1>            
+            <VideoList videos={videos} />
+
+            {/* <PhotoList photos={photos} /> */}
+            {/* <PhotoList photos={pleanStPhotos} /> */}
+            {/* <PhotoList photos={photosframing} /> */}
+            <h1>Flat Refurbishment</h1>
+
+            <h2>Before and After</h2>
+            <PhotoList photos={beforeAfter} />
+    
+         
+    
+          </p>
         )}
       </div>
     </div>

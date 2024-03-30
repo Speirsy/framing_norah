@@ -24,7 +24,7 @@ const Home = () => (
       <p>An expert, clean and safe service to get your art and frames up on your walls</p>
       <button onClick={() => window.location.href = '/contact'}>Tell Us</button>
       <h4>Frame Therapist</h4>
-      <p>REDUCE THIS PARA> ITS TOO LONG. GET TO THE CALL TO ACTION.</p>
+      <p>REDUCE THIS PARA ITS TOO LONG. GET TO THE CALL TO ACTION.</p>
       <p>DIY framing and ‘off the shelf’ frames can be frustrating to work with, </p>
        <p>and results can be disapointing</p>
        <p>Fear not! Standard frames can look great with an expert touch.</p> 
