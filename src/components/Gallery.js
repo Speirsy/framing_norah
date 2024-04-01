@@ -31,6 +31,11 @@ const Gallery = () => {
   // I want to add more filters to bring in different types of media. 
   // const pleanStPhotos = media.filter((mediaItem) => mediaItem.portfolioGroup === 'pleanSt');
   const beforeAfter = media.filter((mediaItem) => mediaItem.beforeAfter === 'paired');
+  const beforeAfter1 = media.filter((mediaItem) => mediaItem.beforeAfter === 'paired1');
+  const beforeAfter2 = media.filter((mediaItem) => mediaItem.beforeAfter === 'paired2');
+  const beforeAfter3 = media.filter((mediaItem) => mediaItem.beforeAfter === 'paired3');
+  const beforeAfter4 = media.filter((mediaItem) => mediaItem.beforeAfter === 'paired4');
+
 
   return (
     <div className='centered'>
