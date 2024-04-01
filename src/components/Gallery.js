@@ -60,6 +60,8 @@ const Gallery = () => {
 
             <h2>Before and After</h2>
             <PhotoList photos={beforeAfter} />
+            <PhotoList photos={beforeAfter1} />
+            <PhotoList photos={beforeAfter2} />
     
          
     
