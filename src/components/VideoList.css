@@ -1,6 +1,6 @@
 /* MediaList.css */
 
-.media-list {
+.video-list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -8,14 +8,15 @@
     padding: 0;
   }
   
-  .media-item {
+  .video-item {
     margin: 10px;
     text-align: center;
   }
   
-  .media-content {
-    max-width: 40%;
+  .video-content {
+    width: 400px;
     height: auto;
+    /* max-width: 40%; */
   }
   
   .description {
@@ -30,6 +31,6 @@
     border-radius: 5px;
   }
   
-  .media-item:hover .description {
+  .video-item:hover .description {
     display: block;
   }

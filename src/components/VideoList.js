@@ -6,11 +6,11 @@ const VideoList = ({ videos }) => (
   <div className="video-list">
     {videos.map((videoItem, index) => (
       <div key={index} className="video-item">
-        <h3>{videoItem.name}</h3>
+        {/* <h3>{videoItem.name}</h3> */}
         {videoItem.type === 'video' && (
           <video
-            width="500"
-            height="385"
+            // width="500"
+            // height="385"
             controls
             className="video-content"
             src={videoItem.url}

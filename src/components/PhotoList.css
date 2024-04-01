@@ -4,37 +4,43 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 20px;
-  }
-  
-  .photo-item {
+}
+
+.photo-item {
     position: relative;
     overflow: hidden;
-  }
-  
-  .photo-content {
-    width: 300px; /* Initial width of the photo */
-    height: auto;
-    transition: transform 0.3s ease-in-out;
+    border: 20px solid transparent; /* Initially, a transparent border */
+    transition: transform 0.5s ease-in-out, border-color 0.5s ease-in-out; /* Add border color transition */
+}
 
-  }
-  
-  .photo-item:hover .photo-content {
-    transform: scale(1.4); /* Increase size on hover */
-  }
-  
-  .description-box {
+.photo-content {
+    width: 300px; /* Occupy full width */
+    height: auto;
+}
+
+.photo-item:hover {
+    border-color: black; /* Change border color when hovering */
+}
+
+.photo-item:hover .photo-content {
+    transform: scale(1.5); /* Increase size on hover */
+}
+
+.description-box {
+    justify-content: center;
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 50%;
+    
     background-color: rgba(139, 139, 139, 0.7); /* Semi-transparent background */
-    padding: 5px;
+    padding: 10px;
     color: #fff;
     font-size: 15px;
     opacity: 0; /* Initially hidden */
     transition: opacity 0.5s ease-in-out;
-  }
-  
-  .photo-item:hover .description-box {
+}
+
+.photo-item:hover .description-box {
     opacity: 1; /* Show description on hover */
-  }
+}
