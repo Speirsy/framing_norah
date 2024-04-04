@@ -1,18 +1,17 @@
+
 // PhotoList.js
 import React from 'react';
 import './PhotoList.css';
 
 const PhotoList = ({ photos }) => (
   <div className="photo-list">
-    {photos.map((photoItem, index) => (
+    {photos && photos.map((photoItem, index) => (
       <div key={index} className="photo-item">
-        {/* <h3>{photoItem.portfolioGroup}</h3> */}
-        {/* Apply hover effect and pop-up text box to the photo */}
-        <div className="photo-wrapper">
+        <h3>{photoItem.name}</h3>
+        {photoItem.type === 'photo' && (
           <img src={photoItem.url} alt={photoItem.name} className="photo-content" />
-          {/* Description box */}
-          <div className="description-box">{photoItem.description}</div>
-        </div>
+        )}
+        <div className="description">{photoItem.description}</div>
       </div>
     ))}
   </div>

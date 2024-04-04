@@ -1,9 +1,8 @@
-// Gallery.js
 import React, { useEffect, useState } from 'react';
 import './Gallery.css';
 import { getMedia } from '../MediaRepository';
-import VideoList from './VideoList'; // Import the VideoList component
-import PhotoList from './PhotoList'; // Import the PhotoList component
+import VideoList from '../containers/VideoList';
+import PhotoPairList from '../containers/PhotoPairList';
 
 const Gallery = () => {
   const [media, setMedia] = useState([]);
@@ -24,18 +23,10 @@ const Gallery = () => {
     fetchMedia();
   }, []);
 
-  // Separate videos and photos
   const videos = media.filter((mediaItem) => mediaItem.type === 'video');
   // const photos = media.filter((mediaItem) => mediaItem.type === 'photo');
-  // const photosframing = media.filter((mediaItem) => mediaItem.type = 'photos' && mediaItem.portfolioGroup === 'LargsJobs');
-  // I want to add more filters to bring in different types of media. 
-  // const pleanStPhotos = media.filter((mediaItem) => mediaItem.portfolioGroup === 'pleanSt');
-  const beforeAfter = media.filter((mediaItem) => mediaItem.beforeAfter === 'paired');
-  const beforeAfter1 = media.filter((mediaItem) => mediaItem.beforeAfter === 'paired1');
-  const beforeAfter2 = media.filter((mediaItem) => mediaItem.beforeAfter === 'paired2');
-  const beforeAfter3 = media.filter((mediaItem) => mediaItem.beforeAfter === 'paired3');
-  const beforeAfter4 = media.filter((mediaItem) => mediaItem.beforeAfter === 'paired4');
-
+  const parent = media.filter((mediaItem) => mediaItem.type === 'photo');
+  const child = media.filter((mediaItem) => mediaItem.type === 'photo');
 
   return (
     <div className='centered'>
@@ -46,26 +37,15 @@ const Gallery = () => {
         {loading ? (
           <p>Loading...</p>
         ) : (
-          <p>
-
-            {/* Render VideoList component for videos */}
-            {/* Render PhotoList component for photos */}
-            <h1>Picture Framing</h1>            
+          <>
+            <h1>Picture Framing</h1>
             <VideoList videos={videos} />
-
-            {/* <PhotoList photos={photos} /> */}
-            {/* <PhotoList photos={pleanStPhotos} /> */}
-            {/* <PhotoList photos={photosframing} /> */}
-            <h1>Flat Refurbishment</h1>
-
-            <h2>Before and After</h2>
-            <PhotoList photos={beforeAfter} />
-            <PhotoList photos={beforeAfter1} />
-            <PhotoList photos={beforeAfter2} />
-    
          
-    
-          </p>
+            <h1>Flat Refurbishment</h1>
+            <h2>Before and After</h2>
+            <PhotoPairList parentItems={parent} />
+            <PhotoPairList childItems={child} />
+          </>
         )}
       </div>
     </div>
@@ -73,4 +53,3 @@ const Gallery = () => {
 };
 
 export default Gallery;
-
