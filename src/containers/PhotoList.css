@@ -6,24 +6,29 @@
     gap: 20px;
 }
 
+.photo-content {
+    width: 100px; 
+    height: auto;
+}
+
 .photo-item {
     position: relative;
     overflow: hidden;
-    border: 20px solid transparent; /* Initially, a transparent border */
+    border: 10px solid transparent; /* Initially, a transparent border */
     transition: transform 0.5s ease-in-out, border-color 0.5s ease-in-out; /* Add border color transition */
 }
 
 .photo-content {
-    width: 300px; /* Occupy full width */
+    width: 100px; 
     height: auto;
 }
 
 .photo-item:hover {
-    border-color: black; /* Change border color when hovering */
+    border-color: rgb(76, 41, 41); /* Change border color when hovering */
 }
 
 .photo-item:hover .photo-content {
-    transform: scale(1.5); /* Increase size on hover */
+    transform: scale(2); /* Increase size on hover */
 }
 
 .description-box {

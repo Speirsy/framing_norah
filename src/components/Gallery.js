@@ -2,7 +2,12 @@ import React, { useEffect, useState } from 'react';
 import './Gallery.css';
 import { getMedia } from '../MediaRepository';
 import VideoList from '../containers/VideoList';
-import PhotoPairList from '../containers/PhotoPairList';
+import PhotoList from '../containers/PhotoList';
+// import Slider from 'react-slick';
+// import 'slick-carousel/slick/slick.css';
+// import 'slick-carousel/slick/slick-theme.css';
+// import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'; // Import arrow icons
+
 
 const Gallery = () => {
   const [media, setMedia] = useState([]);
@@ -24,10 +29,39 @@ const Gallery = () => {
   }, []);
 
   const videos = media.filter((mediaItem) => mediaItem.type === 'video');
-  // const photos = media.filter((mediaItem) => mediaItem.type === 'photo');
-  const parent = media.filter((mediaItem) => mediaItem.type === 'photo');
-  const child = media.filter((mediaItem) => mediaItem.type === 'photo');
+  const pleanStBefore = media.filter((mediaItem) => mediaItem.portfolioGroup === 'pleanStBefore');
+  const pleanSt = media.filter((mediaItem) => mediaItem.portfolioGroup === 'pleanSt');
+  const framingPhotos = media.filter((mediaItem) => mediaItem.type === 'photo' && mediaItem.portfolioGroup === 'LargsJobs');
+  // const parent = media.filter((mediaItem) => mediaItem.type === 'photo');
+  // const child = media.filter((mediaItem) => mediaItem.type === 'photo');
 
+  // const settings = {
+  //   dots: true,
+  //   infinite: true,
+  //   speed: 500,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   prevArrow: <CustomPrevArrow />, // Use custom previous arrow component
+  //   nextArrow: <CustomNextArrow />, // Use custom next arrow component
+  // };
+
+  // const CustomPrevArrow = (props) => {
+  //   const { onClick } = props;
+  //   return (
+  //     <button className="slick-arrow slick-prev" onClick={onClick}>
+  //       <FaChevronLeft />
+  //     </button>
+  //   );
+  // };
+
+  // const CustomNextArrow = (props) => {
+  //   const { onClick } = props;
+  //   return (
+  //     <button className="slick-arrow slick-next" onClick={onClick}>
+  //       <FaChevronRight />
+  //     </button>
+  //   );
+  // };
   return (
     <div className='centered'>
       <h2>Portfolio</h2>
@@ -39,12 +73,21 @@ const Gallery = () => {
         ) : (
           <>
             <h1>Picture Framing</h1>
+            <div>
             <VideoList videos={videos} />
-         
+            </div>
+            <div>
+            <PhotoList photos={framingPhotos} />
+            </div>
             <h1>Flat Refurbishment</h1>
-            <h2>Before and After</h2>
-            <PhotoPairList parentItems={parent} />
-            <PhotoPairList childItems={child} />
+            {/* <Slider {...settings}> */}
+              <div>
+                <PhotoList photos={pleanStBefore} />
+              </div>
+              <div>
+                <PhotoList photos={pleanSt} />
+              </div>
+            {/* </Slider> */}
           </>
         )}
       </div>

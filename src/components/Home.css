@@ -4,12 +4,13 @@
 }
 
 .centered h1 {
-  font-size: 36px;
+  font-size: 48px;
   color: #333; /* Adjust color as needed */
 }
 
 .centered h4 {
-  font-size: 24px;
+  font-size: 36px;
+  font-style: italic;
   color: #666; /* Adjust color as needed */
 }
 
@@ -20,7 +21,7 @@
 }
 
 .centered button {
-  background-color: #007bff; /* Adjust color as needed */
+  background-color: #ff0000; /* Adjust color as needed */
   color: #fff; /* Adjust color as needed */
   border: none;
   padding: 10px 20px;
@@ -31,4 +32,10 @@
 
 .centered button:hover {
   background-color: #0056b3; /* Adjust color as needed */
+}
+
+.centered img {
+  width: 100%;
+  max-width: 600px; /* Adjust as needed */
+  margin-top: 20px; /* Adjust as needed */
 }

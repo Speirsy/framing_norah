@@ -5,20 +5,9 @@
   text-align: center;
   margin-top: 50px; /* Adjust as needed */
 }
-
+/* 
 /* .gallery {
   display: flex;
   flex-wrap: wrap;
 } */
-
-.gallery-item {
-  width: 200px; /* Adjust as needed */
-  height: 200px; /* Adjust as needed */
-  margin: 5px; /* Adjust as needed */
-  overflow: hidden;
-  position: relative; /* Add position relative for absolute positioning of description */
-}
-
-
-
 
