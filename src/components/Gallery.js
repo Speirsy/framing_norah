@@ -1,3 +1,4 @@
+// gallery.js
 import React, { useEffect, useState } from 'react';
 import './Gallery.css';
 import { getMedia } from '../MediaRepository';
@@ -31,7 +32,7 @@ const Gallery = () => {
   const videos = media.filter((mediaItem) => mediaItem.type === 'video');
   const pleanStBefore = media.filter((mediaItem) => mediaItem.portfolioGroup === 'pleanStBefore');
   const pleanSt = media.filter((mediaItem) => mediaItem.portfolioGroup === 'pleanSt');
-  const framingPhotos = media.filter((mediaItem) => mediaItem.type === 'photo' && mediaItem.portfolioGroup === 'LargsJobs');
+  const framingPhotos = media.filter((mediaItem) => mediaItem.portfolioGroup === 'LargsJobs');
   // const parent = media.filter((mediaItem) => mediaItem.type === 'photo');
   // const child = media.filter((mediaItem) => mediaItem.type === 'photo');
 
@@ -64,22 +65,23 @@ const Gallery = () => {
   // };
   return (
     <div className='centered'>
-      <h2>Portfolio</h2>
-      <p>Here is a collection of images and videos that encapsulates the wide range of projects I have completed,</p>
-      <p>in recent years, to give you an idea of the high quality of work you can expect from Framing Norah.</p>
+      <h4>Portfolio</h4>
+      <p>Here is a collection of images and videos that encapsulates a wider range of projects I have completed, in recent years, to give you an idea of the high quality of work you can expect from Framing Norah.</p>
       <div className="gallery">
         {loading ? (
           <p>Loading...</p>
         ) : (
           <>
-            <h1>Picture Framing</h1>
+            <h2>Picture Hanging</h2>
+             <div> PHOTOS </div>
+            <h2>Picture Framing</h2>
             <div>
             <VideoList videos={videos} />
             </div>
             <div>
             <PhotoList photos={framingPhotos} />
             </div>
-            <h1>Flat Refurbishment</h1>
+            <h2>Flat Refurbishment</h2>
             {/* <Slider {...settings}> */}
               <div>
                 <PhotoList photos={pleanStBefore} />

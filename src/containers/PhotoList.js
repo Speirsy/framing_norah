@@ -8,6 +8,8 @@ const PhotoList = ({ photos }) => (
     {photos && photos.map((photoItem, index) => (
       <div key={index} className="photo-item">
         <h3>{photoItem.name}</h3>
+         {/* Log URL */}
+         {console.log('Image URL:', photoItem.url)}
         {photoItem.type === 'photo' && (
           <img src={photoItem.url} alt={photoItem.name} className="photo-content" />
         )}
@@ -16,5 +18,7 @@ const PhotoList = ({ photos }) => (
     ))}
   </div>
 );
+
+console.log(PhotoList);
 
 export default PhotoList;

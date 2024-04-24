@@ -14,7 +14,7 @@
   }
   
   .video-content {
-    width: 400px;
+    width: auto;
     height: 300px;
     /* max-width: 40%; */
   }

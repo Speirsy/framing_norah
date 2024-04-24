@@ -1,0 +1,53 @@
+.centered {
+    text-align: center;
+    margin-top: 50px; /* Adjust as needed */
+  }
+  
+  .centered h1 {
+    font-size: 48px;
+    color: #333; /* Adjust color as needed */
+  }
+  
+  .centered h4 {
+    font-size: 36px;
+    font-style: italic;
+    color: #666; /* Adjust color as needed */
+  }
+  
+  .centered p {
+    font-size: 18px;
+    color: #999; /* Adjust color as needed */
+    margin-bottom: 20px; /* Adjust as needed */
+    margin-left: auto; /* Set left margin to auto */
+    margin-right: auto; /* Set right margin to auto */
+    max-width: 800px; /* Set maximum width */
+  }
+
+  /* Media query for smaller screens */
+@media (max-width: 768px) {
+    .centered p {
+      max-width: 100%; /* Set maximum width to 100% for smaller screens */
+      padding-left: 20px; /* Add padding to the left */
+      padding-right: 20px; /* Add padding to the right */
+    }
+  }
+  
+  .centered button {
+    background-color: #ff0000; /* Adjust color as needed */
+    color: #fff; /* Adjust color as needed */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px; /* Adjust as needed */
+  }
+  
+  .centered button:hover {
+    background-color: #0056b3; /* Adjust color as needed */
+  }
+  
+  .centered img {
+    width: 100%;
+    max-width: 600px; /* Adjust as needed */
+    margin-top: 20px; /* Adjust as needed */
+  }

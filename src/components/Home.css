@@ -4,7 +4,8 @@
 }
 
 .centered h1 {
-  font-size: 48px;
+  font-family: copperplate, sans-serif;
+  font-size: 60px;
   color: #333; /* Adjust color as needed */
 }
 

@@ -6,10 +6,7 @@
     gap: 20px;
 }
 
-.photo-content {
-    width: 100px; 
-    height: auto;
-}
+
 
 .photo-item {
     position: relative;
@@ -19,8 +16,9 @@
 }
 
 .photo-content {
-    width: 100px; 
-    height: auto;
+    
+    height: 200px;
+    width: auto; 
 }
 
 .photo-item:hover {
