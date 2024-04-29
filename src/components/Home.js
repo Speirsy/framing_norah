@@ -19,7 +19,8 @@ const Home = () => (
       
       <h4>Got art hanging around? Get the art hanger round</h4>
       <p></p>
-      <p>Expert picture hanging service for your home or office</p>      <button onClick={() => window.location.href = '/contact'}>Tell Us</button>
+      <p>Expert picture hanging service for your home or office</p>      
+      <button onClick={() => window.location.href = '/contact'}>Tell Us</button>
       <h4>Picture Therapist</h4>
       <p>DIY framing and ‘off the shelf’ frames can be frustrating to work with, </p>
        <p>and results can be disapointing</p>

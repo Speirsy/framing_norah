@@ -4,11 +4,6 @@ import './Gallery.css';
 import { getMedia } from '../MediaRepository';
 import VideoList from '../containers/VideoList';
 import PhotoList from '../containers/PhotoList';
-// import Slider from 'react-slick';
-// import 'slick-carousel/slick/slick.css';
-// import 'slick-carousel/slick/slick-theme.css';
-// import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'; // Import arrow icons
-
 
 const Gallery = () => {
   const [media, setMedia] = useState([]);
@@ -33,36 +28,7 @@ const Gallery = () => {
   const pleanStBefore = media.filter((mediaItem) => mediaItem.portfolioGroup === 'pleanStBefore');
   const pleanSt = media.filter((mediaItem) => mediaItem.portfolioGroup === 'pleanSt');
   const framingPhotos = media.filter((mediaItem) => mediaItem.portfolioGroup === 'LargsJobs');
-  // const parent = media.filter((mediaItem) => mediaItem.type === 'photo');
-  // const child = media.filter((mediaItem) => mediaItem.type === 'photo');
 
-  // const settings = {
-  //   dots: true,
-  //   infinite: true,
-  //   speed: 500,
-  //   slidesToShow: 1,
-  //   slidesToScroll: 1,
-  //   prevArrow: <CustomPrevArrow />, // Use custom previous arrow component
-  //   nextArrow: <CustomNextArrow />, // Use custom next arrow component
-  // };
-
-  // const CustomPrevArrow = (props) => {
-  //   const { onClick } = props;
-  //   return (
-  //     <button className="slick-arrow slick-prev" onClick={onClick}>
-  //       <FaChevronLeft />
-  //     </button>
-  //   );
-  // };
-
-  // const CustomNextArrow = (props) => {
-  //   const { onClick } = props;
-  //   return (
-  //     <button className="slick-arrow slick-next" onClick={onClick}>
-  //       <FaChevronRight />
-  //     </button>
-  //   );
-  // };
   return (
     <div className='centered'>
       <h4>Portfolio</h4>
@@ -73,7 +39,7 @@ const Gallery = () => {
         ) : (
           <>
             <h2>Picture Hanging</h2>
-             <div> PHOTOS </div>
+             <div> PHOTOS TO BE ADDED</div>
             <h2>Picture Framing</h2>
             <div>
             <VideoList videos={videos} />
