@@ -39,7 +39,7 @@ const Gallery = () => {
         ) : (
           <>
             <h2>Picture Hanging</h2>
-             <div> PHOTOS TO BE ADDED</div>
+             <div> PROFESSIONAL PHOTOS TO BE ADDED SOON</div>
             <h2>Picture Framing</h2>
             <div>
             <VideoList videos={videos} />
@@ -48,14 +48,13 @@ const Gallery = () => {
             <PhotoList photos={framingPhotos} />
             </div>
             <h2>Flat Refurbishment</h2>
-            {/* <Slider {...settings}> */}
+            
               <div>
                 <PhotoList photos={pleanStBefore} />
               </div>
               <div>
                 <PhotoList photos={pleanSt} />
               </div>
-            {/* </Slider> */}
           </>
         )}
       </div>

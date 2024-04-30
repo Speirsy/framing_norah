@@ -5,7 +5,6 @@ import NavBar from "./components/NavBar";
 import About from "./components/About";
 import Home from "./components/Home";
 import Contact from "./components/Contact";
-// import ContactForm from "./containers/ContactForm";
 import Gallery from "./components/Gallery";
 import ErrorPage from "./components/ErrorPage";
 
