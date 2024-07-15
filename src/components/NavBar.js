@@ -26,9 +26,9 @@ const NavBar = () => {
           <Link to="/gallery">Gallery</Link>
         </li>
       
-        <li>
+        {/* <li>
           <button onClick={goBack}>Back</button>
-        </li>
+        </li> */}
       </ul>
 
       <div className="burger" onClick={() => setShowMenu(!showMenu)}>

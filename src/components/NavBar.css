@@ -25,11 +25,11 @@
   
   .nav-menu a {
     text-decoration: none;
-    color: #333;
+    color: #010000;
   }
   
   .nav-menu a:hover {
-    color: #666;
+    color: #090808;
   }
   
   .burger {

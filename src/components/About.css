@@ -5,18 +5,18 @@
   
   .centered h1 {
     font-size: 48px;
-    color: #333; /* Adjust color as needed */
+    color: #0c0707; /* Adjust color as needed */
   }
   
   .centered h4 {
     font-size: 36px;
     font-style: italic;
-    color: #666; /* Adjust color as needed */
+    color: #120a0a; /* Adjust color as needed */
   }
   
   .centered p {
     font-size: 18px;
-    color: #999; /* Adjust color as needed */
+    color: #050303; /* Adjust color as needed */
     margin-bottom: 20px; /* Adjust as needed */
     margin-left: auto; /* Set left margin to auto */
     margin-right: auto; /* Set right margin to auto */
@@ -33,8 +33,8 @@
   }
   
   .centered button {
-    background-color: #ff0000; /* Adjust color as needed */
-    color: #fff; /* Adjust color as needed */
+    background-color: #00ff80; /* Adjust color as needed */
+    color: #0f0505; /* Adjust color as needed */
     border: none;
     padding: 10px 20px;
     font-size: 16px;
@@ -43,7 +43,7 @@
   }
   
   .centered button:hover {
-    background-color: #0056b3; /* Adjust color as needed */
+    background-color: #00b318; /* Adjust color as needed */
   }
   
   .centered img {

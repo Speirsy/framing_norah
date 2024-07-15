@@ -5,6 +5,7 @@ import { getMedia } from '../MediaRepository';
 import VideoList from '../containers/VideoList';
 import PhotoList from '../containers/PhotoList';
 
+
 const Gallery = () => {
   const [media, setMedia] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -24,10 +25,12 @@ const Gallery = () => {
     fetchMedia();
   }, []);
 
-  const videos = media.filter((mediaItem) => mediaItem.type === 'video');
+  const videos = media.filter((mediaItem) => mediaItem.type === 'video' && mediaItem.category !== 'promo' && mediaItem.category !== 'pictureHanging');
   const pleanStBefore = media.filter((mediaItem) => mediaItem.portfolioGroup === 'pleanStBefore');
   const pleanSt = media.filter((mediaItem) => mediaItem.portfolioGroup === 'pleanSt');
   const framingPhotos = media.filter((mediaItem) => mediaItem.portfolioGroup === 'LargsJobs');
+  const pictureHangingVideo = media.filter((mediaItem) => mediaItem.category === 'pictureHanging');
+
 
   return (
     <div className='centered'>
@@ -40,6 +43,7 @@ const Gallery = () => {
           <>
             <h2>Picture Hanging</h2>
              <div> PROFESSIONAL PHOTOS TO BE ADDED SOON</div>
+            <VideoList videos={pictureHangingVideo} />
             <h2>Picture Framing</h2>
             <div>
             <VideoList videos={videos} />

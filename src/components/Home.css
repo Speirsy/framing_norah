@@ -1,42 +1,78 @@
+/* Base font size */
+html {
+  font-size: 16px; /* 1rem = 16px */
+}
+
+body {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif,'Arial', sans-serif;
+  line-height: 1.6; /* Adjust as needed for readability */
+}
+
+/* Headings */
+h1 {
+  font-size: 3rem; /* 48px */
+  font-family: 'Palatino', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Rockwell, Haettenschweiler, 'Arial Narrow Bold', sans-serif, copperplate, sans-serif;
+  color: #0d0909; /* Adjust color as needed */
+  margin-bottom: 0.5em;
+}
+
+h2 {
+  font-size: 2.25rem; /* 36px */
+  font-family: 'Palatino', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Rockwell, Haettenschweiler, 'Arial Narrow Bold', sans-serif, copperplate, sans-serif;
+  color: #090404; /* Adjust color as needed */
+  margin-bottom: 0.5em;
+}
+
+h3 {
+  font-size: 1.5rem; /* 24px */
+  font-family: 'Palatino', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Rockwell, Haettenschweiler, 'Arial Narrow Bold', sans-serif, copperplate, sans-serif;
+  color: #090404; /* Adjust color as needed */
+  margin-bottom: 0.5em;
+}
+
+h4 {
+  font-size: 1.5rem; /* 24px */
+  font-family: 'Palatino', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Rockwell, Haettenschweiler, 'Arial Narrow Bold', sans-serif, copperplate, sans-serif;
+  /* font-style: italic; */
+  color: #090404; /* Adjust color as needed */
+  margin-bottom: 0.5em;
+}
+
+/* Paragraphs */
+p {
+  font-size: 1rem; /* 16px */
+  color: #050303; /* Adjust color as needed */
+  margin-bottom: 1em;
+}
+
+/* Buttons */
+button {
+  background-color: #1dfe30; /* Adjust color as needed */
+  color: #0f0505; /* Adjust color as needed */
+  border: none;
+  padding: 0.625rem 1.25rem; /* 10px 20px */
+  font-size: 1rem; /* 16px */
+  cursor: pointer;
+  margin-bottom: 1em; /* Adjust as needed */
+}
+
+button:hover {
+  background-color: #1dfe30; /* Adjust color as needed */
+}
+
+/* Images */
+img {
+  width: 100%;
+  max-width: 600px; /* Adjust as needed */
+  margin-top: 20px; /* Adjust as needed */
+}
+
+/* Centered content */
 .centered {
   text-align: center;
   margin-top: 50px; /* Adjust as needed */
 }
 
-.centered h1 {
-  font-family: copperplate, sans-serif;
-  font-size: 60px;
-  color: #333; /* Adjust color as needed */
-}
-
-.centered h4 {
-  font-size: 36px;
-  font-style: italic;
-  color: #666; /* Adjust color as needed */
-}
-
-.centered p {
-  font-size: 18px;
-  color: #999; /* Adjust color as needed */
-  margin-bottom: 20px; /* Adjust as needed */
-}
-
-.centered button {
-  background-color: #ff0000; /* Adjust color as needed */
-  color: #fff; /* Adjust color as needed */
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  margin-bottom: 20px; /* Adjust as needed */
-}
-
-.centered button:hover {
-  background-color: #0056b3; /* Adjust color as needed */
-}
-
-.centered img {
-  width: 100%;
-  max-width: 600px; /* Adjust as needed */
-  margin-top: 20px; /* Adjust as needed */
+.centered .line-break {
+  display: block;
 }
