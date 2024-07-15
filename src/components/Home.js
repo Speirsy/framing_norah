@@ -34,10 +34,10 @@ const Home = () => {
   
   
       
-      <h2>How's It Hanging?</h2>
+      {/* <h2>How's It Hanging?</h2> */}
       <h3>Have you got art hanging around? Get the art hanger round</h3>
   
-      <p>Get the art hanger round!</p>
+      <p>Short introduction blah blah </p>
 
     
         
