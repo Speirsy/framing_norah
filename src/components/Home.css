@@ -47,19 +47,26 @@ p {
 
 /* Buttons */
 button {
-  background-color: #1dfe30; /* Adjust color as needed */
-  color: #0f0505; /* Adjust color as needed */
+  background: #007bff; /* Blue background */
+  color: #ffffff; /* White text color for better contrast */
   border: none;
-  padding: 0.625rem 1.25rem; /* 10px 20px */
-  font-size: 1rem; /* 16px */
+  padding: 0.5rem 1rem; /* Adjust padding as needed */
+  font-size: 1rem; /* Adjust font size as needed */
+  border-radius: 4px; /* Rounded corners */
   cursor: pointer;
-  margin-bottom: 1em; /* Adjust as needed */
+  margin-bottom: 1em;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
 
+/* Enhanced Buttons */
+
+
+/* Hover effects */
 button:hover {
-  background-color: #1dfe30; /* Adjust color as needed */
+  background: linear-gradient(135deg, #0ca306, #1dfe30); /* Reverse gradient on hover */
+  transform: scale(1.05); /* Slight scaling effect on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
 }
-
 /* Images */
 img {
   width: 100%;

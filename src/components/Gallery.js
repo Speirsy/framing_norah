@@ -51,14 +51,14 @@ const Gallery = () => {
             <div>
             <PhotoList photos={framingPhotos} />
             </div>
-            <h2>Flat Refurbishment</h2>
+            {/* <h2>Flat Refurbishment</h2> */}
             
-              <div>
+              {/* <div>
                 <PhotoList photos={pleanStBefore} />
               </div>
               <div>
                 <PhotoList photos={pleanSt} />
-              </div>
+              </div> */}
           </>
         )}
       </div>

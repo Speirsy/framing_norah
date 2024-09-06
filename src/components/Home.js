@@ -26,10 +26,11 @@ const Home = () => {
 
   return (
     <div className="centered">
+      <h1>Picture Hanger <br/> Glasgow and Nearby</h1>
 
       <img src={process.env.PUBLIC_URL + '/Cover.jpeg'} alt="Norah" />
 
-      <h1>Professional picture hanging service<br />in Glasgow for your home and office</h1>
+      <h2>Professional picture hanging service<br />in Glasgow for your home and office</h2>
 
   
   
@@ -37,9 +38,9 @@ const Home = () => {
       {/* <h2>How's It Hanging?</h2> */}
       <h3>Have you got art hanging around? Get the art hanger round</h3>
   
-      <p>Short introduction blah blah </p>
-
-    
+      <p>I can create layouts with precision and flair, and I can hang it securely.  </p>
+      <p>I have decades of picture framing experience and carefully handling beloved artefacts. </p>
+      <p>I can work safely in you home and will give it the lift you've been waiting for.  </p>
         
       <button onClick={() => window.location.href = '/contact'}>Tell Us</button>
       
