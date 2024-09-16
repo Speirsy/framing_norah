@@ -28,6 +28,23 @@ const Home = () => {
     <div className="centered">
       <h1>Picture Hanger <br/> Glasgow and Nearby</h1>
 
+      {/* Lorna advice
+      <H1> have one only with keywords
+      H2s are also good to have keywords
+      get "remounting" in there 
+      get "mirror hanging" in there 
+      gererous sprinkling of "glasgow" throughout
+      add a google map on the site.
+      read docs on schema.org and how to incorporate into my js site. basically all the data of waht the site is 
+      google tag manager
+      google structured data markup manager
+      schema markup generator (JSON-LD)
+      locations page - new build areas west end finnieston, hyndland, 
+      "what area's do we cover? h2
+      h3 hyndland, finnieston"
+      maybe a separate page 
+      */}
+
       <img src={process.env.PUBLIC_URL + '/Cover.jpeg'} alt="Norah" />
 
       <h2>Professional picture hanging service<br />in Glasgow for your home and office</h2>
@@ -62,10 +79,26 @@ const Home = () => {
             <VideoList videos={promoVideo} />
           </div>  
         </>
+
         )}
+         <h2> how it works</h2>
+
+<p>1. Contact us to arrange a visit</p>
+<p>2. We discuss your requirements and provide a quote</p>
+<p>3. We agree a date and time for the work</p>
+<p>4. We arrive on time and hang your art</p>
+<p>5. You enjoy your art</p>
+<p>6. We leave your home clean and tidy</p>
+<p>7. You recommend us to your friends</p>
+<p>8. We all live happily ever after</p>
+
+<h3>IKEA much?</h3>
+<div>  
+
+</div>
       </div>
     </div>
-  );
+ );
 };
 
 export default Home;

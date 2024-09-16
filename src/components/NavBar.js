@@ -1,12 +1,13 @@
 // NavBar.js
 
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+// import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import './NavBar.css';
 
 const NavBar = () => {
-  const navigate = useNavigate();
-  const goBack = () => navigate(-1);
+  // const navigate = useNavigate();
+  // const goBack = () => navigate(-1);
 
   const [showMenu, setShowMenu] = useState(false);
 
@@ -25,6 +26,13 @@ const NavBar = () => {
         <li>
           <Link to="/gallery">Gallery</Link>
         </li>
+        <li>
+          <Link to="/blog">Blog</Link>  
+        </li> 
+        <li>
+          <Link to="/contact/locations">Locations</Link>
+        </li>
+
       
         {/* <li>
           <button onClick={goBack}>Back</button>
