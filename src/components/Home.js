@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './Home.css';
 import { getMedia } from '../MediaRepository';
 import VideoList from '../containers/VideoList';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 
 const Home = () => {
   const [media, setMedia] = useState([]);
@@ -81,7 +82,7 @@ const Home = () => {
         </>
 
         )}
-         <h2> how it works</h2>
+         <h2> How it all works</h2>
 
 <p>1. Contact us to arrange a visit</p>
 <p>2. We discuss your requirements and provide a quote</p>
@@ -93,7 +94,11 @@ const Home = () => {
 <p>8. We all live happily ever after</p>
 
 <h3>IKEA much?</h3>
-<div>  
+<p>We also are a dab hand with flatpack so feel free to tell us about any furniture assembly you may need doing. </p>
+<div>         
+  <Link to="/contact">
+<button className="btn">Go to Contact Page</button> 
+</Link>
 
 </div>
       </div>
