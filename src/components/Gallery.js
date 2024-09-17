@@ -4,6 +4,7 @@ import './Gallery.css';
 import { getMedia } from '../MediaRepository';
 import VideoList from '../containers/VideoList';
 import PhotoList from '../containers/PhotoList';
+import { Link } from 'react-router-dom';
 
 
 const Gallery = () => {
@@ -34,8 +35,19 @@ const Gallery = () => {
 
   return (
     <div className='centered'>
-      <h4>Portfolio</h4>
-      <p>Here is a collection of images and videos that encapsulates a wider range of projects I have completed, in recent years, to give you an idea of the high quality of work you can expect from Framing Norah.</p>
+      <h1>Portfolio</h1>
+<h4>Ok so this page needs work. It's early days here at Framing Norah so we'll be updating as we go, featuring new work. </h4>  
+<h4>
+  You'll also find a growing list of help, advice, articles and updates on our regularly updated{' '}
+  <Link to="/blog">BLOG</Link>.
+</h4> 
+      <p>Here is a small sample of images and videos that feature work from my days in bespoke picture framing.  </p>
+      {/* <p>These images and videos are a mix of picture hanging, picture framing and flat refurbishment projects.</p> */}
+      <p></p>
+      <p>For more information, please get in touch.</p>
+      <Link to="/contact">
+        <button className="btn">Contact Us</button>
+      </Link>
       <div className="gallery">
         {loading ? (
           <p>Loading...</p>
