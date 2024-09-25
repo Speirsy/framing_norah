@@ -1,0 +1,7 @@
+.blog-media {
+    max-width: 25%;  /* Restrict the image width to 25% */
+    height: auto;    /* Maintain aspect ratio */
+    display: block;  /* Ensure it's treated as a block element */
+    margin: 0 auto;  /* Center the image */
+  }
+  

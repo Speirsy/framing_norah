@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { slugify } from "../utils/slugify";
+// import { renderMedia } from "../utils/mediaUtils"; // Import the utility function
+import ".//BlogList.css"
 
 const BlogList = ({ blogs }) => {
   const [visibleBlogs, setVisibleBlogs] = useState(5); // Number of blogs to show initially
@@ -26,6 +27,7 @@ const BlogList = ({ blogs }) => {
     );
   };
 
+  // Function to detect and render media types (reuse from BlogDetails)
   const getYouTubeEmbedUrl = (mediaUrl) => {
     const youtubeRegex =
       /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
@@ -38,7 +40,9 @@ const BlogList = ({ blogs }) => {
 
   const renderMedia = (mediaUrl) => {
     if (!mediaUrl) return null;
-
+  
+    console.log("Rendering media for:", mediaUrl);
+  
     const youtubeEmbedUrl = getYouTubeEmbedUrl(mediaUrl);
     if (youtubeEmbedUrl) {
       return (
@@ -54,17 +58,20 @@ const BlogList = ({ blogs }) => {
         />
       );
     }
-
-    if (mediaUrl.match(/\.(jpeg|jpg|gif|png)$/)) {
+  
+    // Log the image URL to confirm it's reaching this point
+    if (mediaUrl.match(/\.(jpeg|jpg|gif|png)$/) || mediaUrl.includes("firebasestorage")) {
+      console.log("Rendering image:", mediaUrl);
       return (
         <img
           src={mediaUrl}
           alt="blog media"
-          style={{ maxWidth: "100%", height: "auto" }}
+          className="blog-media"
+          style={{ maxWidth: "50%", height: "auto" }}
         />
       );
     }
-
+  
     if (mediaUrl.match(/\.(mp4|webm|ogg)$/)) {
       return (
         <video width="400" height="285" controls>
@@ -73,7 +80,7 @@ const BlogList = ({ blogs }) => {
         </video>
       );
     }
-
+  
     if (mediaUrl.match(/\.(mp3|wav)$/)) {
       return (
         <audio controls>
@@ -82,13 +89,16 @@ const BlogList = ({ blogs }) => {
         </audio>
       );
     }
-
+  
+    // If no match, return the media URL as a link
+    console.log("Unknown media type, returning as a link");
     return (
       <a href={mediaUrl} target="_blank" rel="noopener noreferrer">
         {mediaUrl}
       </a>
     );
   };
+  
 
   return (
     <div>
@@ -105,14 +115,14 @@ const BlogList = ({ blogs }) => {
               <Link to={`/blog/${blog.slug}`}>{blog.title}</Link>
             </h2>
 
-            {/* If the blog is expanded, show full content */}
+            {/* Render media using renderMedia function */}
             {expandedBlogs.includes(index) ? (
               <>
                 <p>{blog.content}</p>
                 {renderMedia(blog.mediaUrl)}
               </>
             ) : (
-              <p>{blog.content.substring(0, 100)}...</p> // Show truncated content if collapsed
+              <p>{blog.content.substring(0, 100)}...</p>
             )}
 
             <button onClick={() => toggleExpandBlog(index)}>
@@ -122,7 +132,6 @@ const BlogList = ({ blogs }) => {
         ))}
       </ul>
 
-      {/* Show "More Blogs" button if there are more blogs to load */}
       {hasMore && <button onClick={loadMoreBlogs}>More Blogs</button>}
     </div>
   );
