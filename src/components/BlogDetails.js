@@ -1,4 +1,3 @@
-// src/components/BlogDetails.js
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { getBlogBySlug } from '../BlogRepository';
@@ -28,29 +27,23 @@ const BlogDetails = () => {
   if (!blog) return <div>Loading...</div>;
 
   return (
-    <div className='container'>
-          
+    <div className="container">
       <h1 className="text-center">{blog.title}</h1>
       <h3>By: {blog.author}</h3>
       <p>{blog.content}</p>
-      {/* {blog.mediaUrl && ( */}
-        {/* <div> */}
-        {/* {console.log('Media URL:', blog.mediaUrl)} Log the media URL */}
-        {/* {renderMedia(blog.mediaUrl)} */}
-      {/* </div> */}
-      {/* )} */}
-              {/* Warning mediaRender is working in blogsList but not here so I'm rendering directly  */}
-      {blog.mediaUrl && (
-  <div>
-    <img
-      src={blog.mediaUrl}
-      alt="blog media"
-      style={{ maxWidth: '50%', height: 'auto' }}
-    />
-  </div>
-)}
+
+      {/* Correctly render YouTube, images, or videos using renderMedia */}
+      {blog.mediaUrl ? (
+        <div>
+          {console.log("Rendering media for:", blog.mediaUrl)} {/* Debugging log */}
+          {renderMedia(blog.mediaUrl)} {/* Use the utility function to render the media */}
+        </div>
+      ) : (
+        <p>No media available</p>
+      )}
     </div>
   );
 };
 
 export default BlogDetails;
+
