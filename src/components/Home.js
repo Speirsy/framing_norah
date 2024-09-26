@@ -54,16 +54,16 @@ const Home = () => {
   
       
       {/* <h2>How's It Hanging?</h2> */}
-      <h3>Have you got art hanging around? Get the art hanger round</h3>
+      <h3>Have you got art hanging around? Get the art hanger round!</h3>
   
       <p>I can create layouts with precision and flair, and I can hang it securely.  </p>
       <p>I have decades of picture framing experience and carefully handling beloved artefacts. </p>
-      <p>I can work safely in you home and will give it the lift you've been waiting for.  </p>
+      <p>I can work safely in your home and will give it the lift you've been waiting for.  </p>
         
       <button onClick={() => window.location.href = '/contact'}>Tell Us</button>
       
       <p>DIY framing with ‘off the shelf’ picture frames can be frustrating,</p>
-      <p>and results can be disappointing</p>
+      <p>and results can be disappointing.</p>
       <p>Fear not! Shop frames can look great with an expert touch.</p> 
       <p>I can re-mount, adjust or reassemble to turn your "standard" frames  </p> 
       <p>into something special.</p>
