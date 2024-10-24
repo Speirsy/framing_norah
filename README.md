@@ -46,9 +46,9 @@ The app will be available at `http://localhost:3000`.
 
 Framing Norah uses Firebase for authentication, Firestore as a database for blog posts, and Google Maps for location services. To deploy the project to Firebase Hosting, run:
 
-```bash
-firebase deploy
-
+    ```bash
+    firebase deploy
+    ```
 
 Ensure that you have configured Firebase Hosting for the project before running the deploy command.
 
@@ -64,8 +64,10 @@ We welcome contributions! If you'd like to contribute:
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE).
+This project is licensed under the MIT License.
 
 ## Contact
 
 For any questions or feedback, feel free to contact [your contact information].
+
+
