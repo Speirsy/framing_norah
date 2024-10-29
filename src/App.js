@@ -15,6 +15,7 @@ import Blog from "./components/Blog";
 import BlogForm from "./components/BlogForm";
 import BlogDetails from "./components/BlogDetails";
 import LoginForm from "./components/LoginForm"; // Add a login form for you to log in
+import CV from "./components/CV";
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -37,6 +38,7 @@ const App = () => {
         <Route path="/contact" element={<Contact />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/Glasgow" element={<Locations />} />
+        <Route path="/CV" element={<CV />} />
         
         {/* Public blog list */}
         <Route path="/blog" element={<Blog />} />
