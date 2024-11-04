@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import './GoogleReviews.css'; // Add a CSS file for Google-style styling
 
 const GoogleReviews = () => {
   const [reviews, setReviews] = useState([]);
@@ -6,14 +7,16 @@ const GoogleReviews = () => {
 
   useEffect(() => {
     const fetchReviews = async () => {
-      const apiKey = 'AIzaSyB828eWioClkkZyTa8MeFPo0w3KPxj3WjY'; // Use the new key
-      const placeId = 'ChIJtSTlEffxLIERJPt9TEtn4V8'; // Replace with your Place ID
-      const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews&key=${apiKey}`;
+      const url = 'https://fetchgooglereviews-tghkr44kaa-uc.a.run.app'; // Use your function URL
 
       try {
         const response = await fetch(url);
         const data = await response.json();
-        setReviews(data.result.reviews);
+        if (data.result && data.result.reviews) {
+          setReviews(data.result.reviews);
+        } else {
+          console.error('No reviews found in the response');
+        }
         setLoading(false);
       } catch (error) {
         console.error('Error fetching reviews:', error);
@@ -25,17 +28,24 @@ const GoogleReviews = () => {
   }, []);
 
   return (
-    <div>
+    <div className="google-reviews-widget">
       {loading ? (
         <p>Loading reviews...</p>
       ) : (
         <div>
           {reviews && reviews.length > 0 ? (
             reviews.map((review, index) => (
-              <div key={index} className="review">
-                <p><strong>{review.author_name}</strong> - {review.rating} stars</p>
-                <p>{review.text}</p>
-                <p>{new Date(review.time * 1000).toLocaleDateString()}</p>
+              <div key={index} className="review-card">
+                <div className="review-header">
+                  <p className="review-author"><strong>{review.author_name}</strong></p>
+                  <div className="review-rating">
+                    {Array.from({ length: review.rating }).map((_, i) => (
+                      <span key={i} className="star">★</span>
+                    ))}
+                  </div>
+                </div>
+                <p className="review-text">{review.text}</p>
+                <p className="review-date">{new Date(review.time * 1000).toLocaleDateString()}</p>
               </div>
             ))
           ) : (

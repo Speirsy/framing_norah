@@ -33,7 +33,7 @@ const Home = () => {
       {/* Lorna advice */}
       <img src={process.env.PUBLIC_URL + '/Cover.jpeg'} alt="Norah" />
 
-      <h2><br />Professional picture hanging service<br />in Glasgow for your home and office</h2>
+      <h2><br />Glasgow's Picture Hanger<br />Professional picture hanging of things on walls</h2>
 
       <h3>Have you got art hanging around? Get the art hanger round!</h3>
 
