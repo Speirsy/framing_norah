@@ -7,7 +7,7 @@ const GoogleReviews = () => {
   useEffect(() => {
     const fetchReviews = async () => {
       const apiKey = 'AIzaSyB828eWioClkkZyTa8MeFPo0w3KPxj3WjY'; // Use the new key
-      const placeId = 'ChIJ8SGGHWlPiEgR9qyAG78kSs4'; // Replace with your Place ID
+      const placeId = 'ChIJtSTlEffxLIERJPt9TEtn4V8'; // Replace with your Place ID
       const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${placeId}&fields=reviews&key=${apiKey}`;
 
       try {

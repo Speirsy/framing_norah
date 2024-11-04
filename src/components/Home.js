@@ -3,7 +3,7 @@ import './Home.css';
 import { getMedia } from '../MediaRepository';
 import VideoList from '../containers/VideoList';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import GoogleReviews from './GoogleReviews'; // Import the GoogleReviews component
+import GoogleReviews from './GoogleReviews';
 
 const Home = () => {
   const [media, setMedia] = useState([]);
