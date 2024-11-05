@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -5,59 +7,161 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
-    <meta name="description" content="Web site created using create-react-app" />
+    <meta name="description" content="Framing Norah - Picture Hanging Service in Glasgow" />
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>Framing Norah</title>
 
-    <!-- JSON-LD Schema Markup for Reviews -->
+    <!-- Local Business Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "Framing Norah Picture Hanging",
+      "image": "https://framingnorah.com/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "23 Anniesland Crescent",
+        "addressLocality": "Glasgow",
+        "postalCode": "G140YQ",
+        "addressCountry": "GB"
+      },
+      "telephone": "+447989226593",
+      "url": "https://framingnorah.com",
+      "priceRange": "$$",
+      "openingHours": "Mo,Tu,We,Th,Fr 09:00-17:00"
+    }
+    </script>
+
+    <!-- Service Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Picture Hanging and Framing",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Framing Norah Picture Hanging",
+        "url": "https://framingnorah.com"
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Glasgow, UK"
+      },
+      "description": "Professional picture hanging, framing, and mirror hanging services in Glasgow and surrounding areas."
+    }
+    </script>
+
+    <!-- Review Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Framing Norah Picture Hanging",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "5",
+        "reviewCount": "5"
+      },
+      "review": [
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Elsa Murphy" },
+        "datePublished": "2024-09-25",
+        "reviewBody": "Excellent service, very professional. Lovely finish. Would absolutely use again.",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Catherine Lomas" },
+        "datePublished": "2024-09-25",
+        "reviewBody": "Great service and hung my pictures with precision and care. Excellent attention to detail.",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Organization", "name": "Hyndland Practice Unit" },
+        "datePublished": "2024-09-25",
+        "reviewBody": "Great professional service. Experienced framer. Highly recommend",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      },
+      {
+        "@type": "Review",
+        "author": { "@type": "Person", "name": "Magalie Mackay" },
+        "datePublished": "2024-09-30",
+        "reviewBody": "Really professional and did a great job, thanks!",
+        "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
+      }
+   
+      ]
+    }
+    </script>
+
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What services does Framing Norah offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Framing Norah offers picture hanging, mirror hanging, and art installation services. Mount cutting and "off the shelf" framing. Flat Pack assembly"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you offer services in areas outside Glasgow?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, we provide services in Glasgow and nearby areas. Please contact us for more details."
+          }
+        }
+      ]
+    }
+    </script>
+
+    <!-- Social Media Profile Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Framing Norah",
+      "url": "https://framingnorah.com",
+      "sameAs": [
+        "https://www.facebook.com/framingnorah",
+        "https://www.instagram.com/framing_norah",
+       
+      ]
+    }
+    </script>
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Service",
+        "@type": "Place",
         "name": "Framing Norah Picture Hanging",
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "5",
-          "reviewCount": "5"
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "23 Anniesland Crescent",
+          "addressLocality": "Glasgow",
+          "postalCode": "G140YQ",
+          "addressCountry": "GB"
         },
-        "review": [
-       
-          {
-            "@type": "Review",
-            "author": { "@type": "Person", "name": "Elsa Murphy" },
-            "datePublished": "2024-09-25",
-            "reviewBody": "Excellent service, very professional. Lovely finish. Would absolutely use again.",
-            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-          },
-          {
-            "@type": "Review",
-            "author": { "@type": "Person", "name": "Catherine Lomas" },
-            "datePublished": "2024-09-25",
-            "reviewBody": "Great service and hung my pictures with precision and care. Excellent attention to detail.",
-            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-          },
-          {
-            "@type": "Review",
-            "author": { "@type": "Organization", "name": "Hyndland Practice Unit" },
-            "datePublished": "2024-09-25",
-            "reviewBody": "Great professional service. Experienced framer. Highly recommend",
-            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-          },
-          {
-            "@type": "Review",
-            "author": { "@type": "Person", "name": "Magalie Mackay" },
-            "datePublished": "2024-09-30",
-            "reviewBody": "Really professional and did a great job, thanks!",
-            "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }
-          }
-        ]
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": 55.884916163844096,
+          "longitude": -4.363090646063317
+        },
+        "hasMap": "https://www.google.com/maps?q=55.884916163844096,-4.363090646063317"
       }
-    </script>
+      </script>
+      
+
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
   </body>
 </html>
-
