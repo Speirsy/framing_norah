@@ -1,7 +1,21 @@
+/* Remove bullet points and reset list styling */
+ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0;            /* Remove default padding */
+  margin: 0;             /* Remove default margin */
+}
+
+/* Style individual list items */
+li {
+  margin-bottom: 20px;   /* Add spacing between list items */
+}
+
+/* Style for blog media (images, videos, etc.) */
 .blog-media {
-    max-width: 25%;  /* Restrict the image width to 25% */
-    height: auto;    /* Maintain aspect ratio */
-    display: block;  /* Ensure it's treated as a block element */
-    margin: 0 auto;  /* Center the image */
-  }
+  max-width: 25%;      /* Restrict the media width to 25% */
+  height: auto;        /* Maintain aspect ratio */
+  display: block;      /* Ensure it’s treated as a block element */
+  margin: 0 auto;      /* Center the media */
+}
+
   

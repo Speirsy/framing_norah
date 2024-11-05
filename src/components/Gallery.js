@@ -27,6 +27,7 @@ const Gallery = () => {
   const videos = media.filter(mediaItem => mediaItem.type === 'video' && mediaItem.category !== 'promo' && mediaItem.category !== 'pictureHanging');
   const framingPhotos = media.filter(mediaItem => mediaItem.portfolioGroup === 'LargsJobs');
   const pictureHangingVideo = media.filter(mediaItem => mediaItem.category === 'pictureHanging');
+  const pictureHangingPhotos = media.filter(mediaItem => mediaItem.category === 'HangingPhoto');
 
   return (
     <div className="container text-center">
@@ -36,8 +37,7 @@ const Gallery = () => {
         You'll also find a growing list of help, advice, articles and updates on our regularly updated{' '}
         <Link to="/blog">BLOG</Link>.
       </h4> 
-      <p>Here is a small sample of images and videos that feature work from my days in bespoke picture framing.</p>
-      <p>For more information, please get in touch.</p>
+      <p></p>
       <Link to="/contact">
         <button className="btn btn-primary mb-4">Contact Us</button>
       </Link>
@@ -51,10 +51,13 @@ const Gallery = () => {
           {/* <div className="row justify-content-center"> */}
             {/* <div className="col-md-8"> */}
               <VideoList videos={pictureHangingVideo} />
+              <PhotoList photos={pictureHangingPhotos} />
             </div>
       
 
-          <h2>Picture Framing</h2>
+          <h2>Picture Framing - Quick Portfolio</h2>
+          <h4>Here is a small sample of images and videos that feature work from my days in bespoke picture framing.
+          For more information, please get in touch.</h4>
           <VideoList videos={videos} />
           <PhotoList photos={framingPhotos} />
         </>
