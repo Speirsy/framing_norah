@@ -28,18 +28,18 @@ const Home = () => {
 
   return (
     <div className="centered">
-      <h1>Picture Hanger <br /> Glasgow and Nearby</h1>
+      <h1>Glasgow's Picture Hanger</h1>
 
       {/* Lorna advice */}
       <img src={process.env.PUBLIC_URL + '/Cover.jpeg'} alt="Norah" />
 
-      <h2><br />Glasgow's Picture Hanger<br />Professional picture hanging of things on walls</h2>
+      <h2><br />Professional hanger of things on walls</h2>
 
       <h3>Have you got art hanging around? Get the art hanger round!</h3>
 
       <p>I can create layouts with precision and flair, and I can hang it securely.</p>
       <p>I have decades of picture framing experience and carefully handling beloved artefacts.</p>
-      <p>I can work safely in your home and will give it the lift you've been waiting for.</p>
+      <p>I can work safely in your home and will give your walls the lift you've been waiting for.</p>
 
       <button onClick={() => window.location.href = '/contact'}>Tell Us</button>
 
@@ -71,9 +71,11 @@ const Home = () => {
       <p>6. We leave your home clean and tidy</p>
       <p>7. You recommend us to your friends</p>
       <p>8. We all live happily ever after</p>
+      <p> </p>
 
       <h3>IKEA much?</h3>
       <p>We also are a dab hand with flatpack so feel free to tell us about any furniture assembly you may need doing.</p>
+      <p></p>
 
       <div>
         <Link to="/contact">
@@ -84,6 +86,7 @@ const Home = () => {
       {/* Add Google Reviews Section at the bottom */}
       <div>
         <h2>What Our Customers Are Saying</h2>
+        <p></p>
         <GoogleReviews /> {/* Render Google Reviews */}
       </div>
     </div>
