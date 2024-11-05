@@ -15,7 +15,7 @@ const center = {
 const Locations = () => {
   return (
     <div className='centered'>
-      <h1>Glasgow West End and Surrounding Suburbs</h1>
+      <h1>Picture Hanging Service <br/>Glasgow West End and Surrounding Suburbs</h1>
       <h2>Scotstoun, Hyndland, Broomhill, Knightswood</h2>
       <h3>Partick, Hillhead, Woodlands</h3>
       <h3>Erskine, Old Kilpatrick, Renfrew, Paisley and more</h3>
@@ -23,6 +23,10 @@ const Locations = () => {
          {/* Link to Contact page */}
          <Link to="/contact">
         <button className="btn">Where are you?</button>
+      </Link>
+      <p>More info about us and</p> 
+           <Link to="/">
+        <button className="btn">Our service</button>
       </Link>
 
       {/* Google Map */}

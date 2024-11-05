@@ -37,7 +37,7 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/gallery" element={<Gallery />} />
-        <Route path="/Glasgow" element={<Locations />} />
+        <Route path="/Picture_Hanging_Service_Glasgow" element={<Locations />} />
         <Route path="/CV" element={<CV />} />
         
         {/* Public blog list */}
