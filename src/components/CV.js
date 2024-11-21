@@ -7,13 +7,14 @@ const CV = () => {
     <>
 
   <div style={{ fontFamily: 'Arial, sans-serif', lineHeight: 1.6, maxWidth: '700px', margin: '0 auto' }}>
-    <h1>John Speirs - Picture Framer</h1>
-    <p>23 Anniesland Crescent, G140YQ | 07989226593 | <a href="mailto:speirsybass@gmail.com">speirsybass@gmail.com</a> | <a href="https://framingnorah.com" target="_blank" rel="noopener noreferrer">framingnorah.com</a></p>
+    <h1>John Speirs</h1>
+    <h2>Picture Framer and Hanger</h2>
+    <p>23 Anniesland Crescent, G140YQ | 07989226593 | <a href="mailto:john@framingnorah.com">john@framingnorah.com</a> | <a href="https://framingnorah.com" target="_blank" rel="noopener noreferrer">framingnorah.com</a></p>
     
     <section>
       <h2>Professional Summary</h2>
       <p>
-        With over thirty years of hands-on experience, I am a highly skilled picture framer, known for precise, careful handling of each piece and strong communication skills to meet client needs. As the owner of Framing Norah, a picture-hanging service, I take a proactive approach to online engagement, brand management, and customer service. I bring a unique blend of craftsmanship, client-focused service, and digital proficiency, making me a valuable addition to any framing team.
+        With over thirty years of hands-on experience, I am a highly skilled picture framer, known for meticulous, careful handling of each piece,and strong communication skills to meet client needs. As the owner of Framing Norah, a picture-hanging service, I take a proactive approach to online engagement, brand management, and customer service. I bring a unique blend of craftsmanship, client-focused service, and digital proficiency, making me a valuable addition to any framing team.
       </p>
     </section>
     

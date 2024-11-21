@@ -11,7 +11,8 @@ const BlogForm = () => {
     title: '',
     content: '',
     author: '',
-    mediaUrl: ''
+    mediaUrl: '',
+    mediaUrlToo: ''
   });
 
   // Handle form field changes
@@ -68,6 +69,10 @@ const BlogForm = () => {
       <label>
         Media URL (Image/Video):
         <input type="text" name="mediaUrl" value={formData.mediaUrl} onChange={handleChange} />
+      </label>
+      <label>
+        Media URL 2(Image/Video):
+        <input type="text" name="mediaUrlToo" value={formData.mediaUrlToo} onChange={handleChange} />
       </label>
       <button type="submit">Submit</button>
     </form>

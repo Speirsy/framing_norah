@@ -30,20 +30,26 @@ const BlogDetails = () => {
     <div className="container">
       <h1 className="text-center">{blog.title}</h1>
       <h3>By: {blog.author}</h3>
-      <p>{blog.content}</p>
 
-      {/* Correctly render YouTube, images, or videos using renderMedia */}
-      {blog.mediaUrl ? (
-        <div>
-          {console.log("Rendering media for:", blog.mediaUrl)} {/* Debugging log */}
-          {renderMedia(blog.mediaUrl)} {/* Use the utility function to render the media */}
+      {/* Render mediaUrl above the content */}
+      {blog.mediaUrl && (
+        <div className="media-container">
+          {renderMedia(blog.mediaUrl)}
         </div>
-      ) : (
-        <p>No media available</p>
+      )}
+
+      <p className="blog-content">{blog.content}</p>
+
+      {/* Render mediaUrlToo below the content */}
+      {blog.mediaUrlToo && (
+        <div className="media-container">
+          {renderMedia(blog.mediaUrlToo)}
+        </div>
       )}
     </div>
   );
 };
 
 export default BlogDetails;
+
 

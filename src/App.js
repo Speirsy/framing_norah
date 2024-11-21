@@ -16,6 +16,7 @@ import BlogForm from "./components/BlogForm";
 import BlogDetails from "./components/BlogDetails";
 import LoginForm from "./components/LoginForm"; // Add a login form for you to log in
 import CV from "./components/CV";
+// import Banner from "./components/Banner";
 
 const App = () => {
   const [user, setUser] = useState(null);
