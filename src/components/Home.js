@@ -28,12 +28,12 @@ const Home = () => {
 
   return (
     <div className="centered">
-      <h1>Glasgow's Picture Hanger</h1>
+      <h1>Glasgow Picture Hanger</h1>
 
       {/* Lorna advice */}
       <img src={process.env.PUBLIC_URL + '/Cover.jpeg'} alt="Norah" />
 
-      <h2><br />Professional hanger of things on walls</h2>
+      <h2><br />Professional hanger of art and things on walls</h2>
 
       <h3>Have you got art hanging around? Get the art hanger round!</h3>
 
