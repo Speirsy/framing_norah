@@ -24,71 +24,68 @@ const Home = () => {
     fetchMedia();
   }, []);
 
-  const promoVideo = media.filter((mediaItem) => mediaItem.type === 'video' && mediaItem.category === 'promo');
+  const promoVideo = media.filter(
+    (mediaItem) => mediaItem.type === 'video' && mediaItem.category === 'promo'
+  );
 
   return (
     <div className="centered">
-      <h1>Glasgow Picture Hanger</h1>
+      <h1>Professional Picture Hanging & Art Installation in Glasgow</h1>
 
-      {/* Lorna advice */}
       <img src={process.env.PUBLIC_URL + '/Cover.jpeg'} alt="Norah" />
 
-      <h2><br />Professional hanger of art and things on walls</h2>
+      <p></p>
 
-      <h3>Have you got art hanging around? Get the art hanger round!</h3>
+      <h2>Your Go-To Expert for Hanging Art and Assembling Furniture</h2>
 
-      <p>I can create layouts with precision and flair, and I can hang it securely.</p>
-      <p>I have decades of picture framing experience and carefully handling beloved artefacts.</p>
-      <p>I can work safely in your home and will give your walls the lift you've been waiting for.</p>
+      <h3>Have you got art hanging around? Let the art hanger handle it!</h3>
 
-      <button onClick={() => window.location.href = '/contact'}>Tell Us</button>
+      <p>With decades of experience in picture framing and carefully handling cherished artifacts, I bring precision and flair to every installation. Your walls will thank you!</p>
+      <p>Need help with your flat pack furniture? I’m also a dab hand with IKEA and other assembly tasks.</p>
 
-      <p>DIY framing with ‘off the shelf’ picture frames can be frustrating,</p>
-      <p>and results can be disappointing.</p>
-      <p>Fear not! Shop frames can look great with an expert touch.</p>
-      <p>I can re-mount, adjust or reassemble to turn your "standard" frames</p>
-      <p>into something special.</p>
+      <Link to="/contact">
+        <button className="btn">Get a Free Quote</button>
+      </Link>
+      <p></p>
 
-      <button onClick={() => window.location.href = '/contact'}>We Can Help</button>
-      
+      <img src={process.env.PUBLIC_URL + '/44 pictures.jpeg'} alt="Norah" />
+      <p></p>
+
+      <h2>Why Choose Framing Norah?</h2>
+      <ul>
+        <li>Precision layouts for your art and decor</li>
+        <li>Safe and secure hanging techniques</li>
+        <li>5 Star reviews from very happy customers</li>
+        <li>Professional and reliable service in your home</li>
+      </ul>
+
+      <h2>How It Works</h2>
+      <ol>
+        <li>Contact us through phone, email, or WhatsApp</li>
+        <li>Discuss your needs and get a free estimate</li>
+        <li>Schedule a convenient date and time</li>
+        <li>We show up, hang your art, and assemble your furniture</li>
+        <li>Enjoy your refreshed space</li>
+        <li>Leave us a 5-star review and recommend us to your friends!</li>
+      </ol>
+
+      <h3>Flat Pack Assembly Services</h3>
+      <p>From IKEA wardrobes to office desks, I can assemble it all with ease and precision. No more headaches over confusing instructions!</p>
+
+      <Link to="/contact">
+        <button className="btn">Book Flat Pack Assembly</button>
+      </Link>
+
       <div>
         {loading ? (
-          <p>Loading...</p>
+          <p>Loading videos...</p>
         ) : (
-          <div>
-            <VideoList videos={promoVideo} />
-          </div>
+          <VideoList videos={promoVideo} />
         )}
       </div>
 
-      <h2> How it all works</h2>
-
-      <p>1. Contact us to arrange a visit</p>
-      <p>2. We discuss your requirements and provide a quote</p>
-      <p>3. We agree a date and time for the work</p>
-      <p>4. We arrive on time and hang your art</p>
-      <p>5. You enjoy your art</p>
-      <p>6. We leave your home clean and tidy</p>
-      <p>7. You recommend us to your friends</p>
-      <p>8. We all live happily ever after</p>
-      <p> </p>
-
-      <h3>IKEA much?</h3>
-      <p>We also are a dab hand with flatpack so feel free to tell us about any furniture assembly you may need doing.</p>
-      <p></p>
-
-      <div>
-        <Link to="/contact">
-          <button className="btn">Go to Contact Page</button>
-        </Link>
-      </div>
-
-      {/* Add Google Reviews Section at the bottom */}
-      <div>
-        <h2>What Our Customers Are Saying</h2>
-        <p></p>
-        <GoogleReviews /> {/* Render Google Reviews */}
-      </div>
+      <h2>What Our Customers Are Saying</h2>
+      <GoogleReviews />
     </div>
   );
 };

@@ -14,7 +14,7 @@ const About = () => (
         At Framing Norah, my goal is to help you beautify your home. Whether it’s a cherished family portrait, a stunning piece of artwork, or a quirky poster, I have the skills and expertise to ensure they are securely and beautifully displayed, just where you want them.
 <img src={process.env.PUBLIC_URL + '/Glasgow_Norah.jpg'} alt="Norah" /> 
 
-<br />I take pride in using only the best materials and equipment. You can trust that with Framing Norah, your art will stay up straight and secur - no more worrying about crooked frames or flimsy hooks. Quality and durability are my top priorities.
+<br />I take pride in using only the best hanging materials and equipment. You can trust that with Framing Norah, your art will stay up straight and secur - no more worrying about crooked frames or flimsy hooks. Quality and durability are my top priorities.
 <p>
 <br />Do you have DIY framing project that didn’t go as planned? Don’t worry. I specialize in fixing "off the shelf" mounts and frames that don’t work. I’ll bring my know - how to sort them out.
 </p>

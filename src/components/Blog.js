@@ -20,7 +20,7 @@ const Blog = () => {
   return (
     <div className='container text-center'>
       <h1>Projects, Help, Ideas, Therapy, Musings...</h1>
-      <h2>Blogs about picture hanging in Glasgow, framing and life</h2>
+      <h2>Blogs about picture hanging in Glasgow, framing and life.</h2>
       <BlogList blogs={blogs} /> {/* Show the list of blogs with collapse and "More Blogs" button */}
     </div>
 
