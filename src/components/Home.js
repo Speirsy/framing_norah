@@ -30,7 +30,7 @@ const Home = () => {
 
   return (
     <div className="centered">
-      <h1>Professional Picture Hanging & Art Installation in Glasgow</h1>
+      <h1>Picture Hanging Service & Art Installation in Glasgow, Edinburgh and beyond </h1>
 
       <img src={process.env.PUBLIC_URL + '/Cover.jpeg'} alt="Norah" />
 
@@ -61,10 +61,10 @@ const Home = () => {
 
       <h2>How It Works</h2>
       <ol>
-        <li>Contact us through phone, email, or WhatsApp</li>
-        <li>Discuss your needs and get a free estimate</li>
+        <li>Contact us through our form, phone or email.</li>
+        <li>Tell us your needs and get a free estimate</li>
         <li>Schedule a convenient date and time</li>
-        <li>We show up, hang your art, and assemble your furniture</li>
+        <li>We show up, hang your art, and/or assemble your furniture</li>
         <li>Enjoy your refreshed space</li>
         <li>Leave us a 5-star review and recommend us to your friends!</li>
       </ol>
