@@ -35,7 +35,7 @@ const Flatpack = () => {
 <PhotoList photos={flatpackPhotos} />
       <h2 className="mb-4">
         Let Framing Norah handle your flat pack frustrations. We assemble furniture all over
-        <strong> Glasgow</strong>, Bearsden, Milngavie, and beyond. Whether it’s an IKEA wardrobe,
+        <strong> Glasgow</strong>, and beyond. Whether it’s an IKEA wardrobe,
         a B&Q bed, or a mystery unit with 96 screws and no words, we’ll get it built securely and neatly.
       </h2>
 
