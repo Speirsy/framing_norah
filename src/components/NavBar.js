@@ -24,6 +24,9 @@ const NavBar = () => {
           <Link to="/contact">Contact</Link>
         </li>
         <li>
+          <Link to="/flatpack-assembly-glasgow">Flat Pack Assembly</Link>
+        </li>
+        <li>
           <Link to="/gallery">Gallery</Link>
         </li>
         <li>

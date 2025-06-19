@@ -8,6 +8,7 @@ import NavBar from "./components/NavBar";
 import About from "./components/About";
 import Home from "./components/Home";
 import Contact from "./components/Contact";
+import FlatPackAssemblyPage from "./components/FlatPackAssemblyPage";
 import Gallery from "./components/Gallery";
 import ErrorPage from "./components/ErrorPage";
 import Locations from "./components/Locations";
@@ -40,6 +41,8 @@ const App = () => {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/Picture_Hanging_Service_Glasgow" element={<Locations />} />
         <Route path="/CV" element={<CV />} />
+        <Route path="/flatpack-assembly-glasgow" element={<FlatPackAssemblyPage />} />
+
         
         {/* Public blog list */}
         <Route path="/blog" element={<Blog />} />

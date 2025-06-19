@@ -26,15 +26,15 @@ const Gallery = () => {
 
   const videos = media.filter(mediaItem => mediaItem.type === 'video' && mediaItem.category !== 'promo' && mediaItem.category !== 'pictureHanging');
   const framingPhotos = media.filter(mediaItem => mediaItem.portfolioGroup === 'LargsJobs');
-  const pictureHangingVideo = media.filter(mediaItem => mediaItem.category === 'pictureHanging');
+  
   const pictureHangingPhotos = media.filter(mediaItem => mediaItem.category === 'HangingPhoto');
-
+  const pictureHangingVideo = media.filter(mediaItem => mediaItem.category === 'pictureHanging');
   return (
     <div className="container text-center">
       <h1>Portfolio</h1>
-      <h4>Ok so this page needs work. It's early days here at Framing Norah so we'll be updating as we go, featuring new work.</h4>
+      <h4>It's early days here at Framing Norah so we'll be updating this pagewhen we're not out and about actually hanging mirrors, picture and lots more. </h4>
       <h4>
-        You'll also find a growing list of help, advice, articles and updates on our regularly updated{' '}
+        You'll also find a growing list of help, advice, articles and updates on our {' '}
         <Link to="/blog">BLOG</Link>.
       </h4> 
       <p></p>
@@ -46,20 +46,21 @@ const Gallery = () => {
         <p>Loading...</p>
       ) : (
         <>
-          <h2>Picture Hanging</h2>
+          <h2>Picture & Mirror Hanging</h2>
           <div>
           {/* <div className="row justify-content-center"> */}
             {/* <div className="col-md-8"> */}
-              <VideoList videos={pictureHangingVideo} />
               <PhotoList photos={pictureHangingPhotos} />
+              <VideoList videos={pictureHangingVideo} />
+              
             </div>
       
 
-          <h2>Picture Framing - Quick Portfolio</h2>
-          <h4>Here is a small sample of images and videos that feature work from my days in bespoke picture framing.
-          For more information, please get in touch.</h4>
-          <VideoList videos={videos} />
-          <PhotoList photos={framingPhotos} />
+          {/* <h2>Picture Framing - Quick Portfolio</h2> */}
+          {/* <h4>Here is a small sample of images and videos that feature work from my days in bespoke picture framing. */}
+          {/* For more information, please get in touch.</h4> */}
+          {/* <VideoList videos={videos} /> */}
+          {/* <PhotoList photos={framingPhotos} /> */}
         </>
       )}
     </div>
