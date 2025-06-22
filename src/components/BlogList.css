@@ -18,4 +18,11 @@ li {
   margin: 0 auto;      /* Center the media */
 }
 
+
+
+  .blog-item {
+  text-align: left;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
   

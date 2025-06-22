@@ -111,13 +111,18 @@ const BlogList = ({ blogs }) => {
               <div>
                 {/* Media above text */}
                 {renderMedia(blog.mediaUrl)}
-                <p>{blog.content}</p>
+                
+                {/* Render full HTML content */}
+                <div dangerouslySetInnerHTML={{ __html: blog.content }} />
+
                 {/* Media below text */}
                 {renderMedia(blog.mediaUrlToo)}
               </div>
             ) : (
-              <p>{blog.content.substring(0, 100)}...</p> // Truncated content for collapsed blogs
+              // Truncated plain-text preview for collapsed view
+              <p>{blog.content.replace(/<[^>]+>/g, '').substring(0, 100)}...</p>
             )}
+
 
             <button onClick={() => toggleExpandBlog(index)}>
               {expandedBlogs.includes(index) ? "Collapse" : "Read More"}

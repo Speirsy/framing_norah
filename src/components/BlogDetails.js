@@ -38,7 +38,8 @@ const BlogDetails = () => {
         </div>
       )}
 
-      <p className="blog-content">{blog.content}</p>
+      <div className="blog-content" dangerouslySetInnerHTML={{ __html: blog.content }} />
+
 
       {/* Render mediaUrlToo below the content */}
       {blog.mediaUrlToo && (
