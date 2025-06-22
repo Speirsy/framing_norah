@@ -32,7 +32,7 @@ const Gallery = () => {
   return (
     <div className="container text-center">
       <h1>Portfolio</h1>
-      <h4>It's early days here at Framing Norah so we'll be updating this page when we're not out and about actually hanging mirrors, picture and lots more. </h4>
+      <h4>It's early days here at Framing Norah so we'll be updating this page when we're not out and about actually hanging mirrors, pictures and lots more. </h4>
       <h4>
         You'll also find a growing list of help, advice, articles and updates on our {' '}
         <Link to="/blog">BLOG</Link>.

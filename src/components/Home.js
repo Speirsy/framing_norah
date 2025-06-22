@@ -68,9 +68,14 @@ const Home = () => {
         <button className="btn">Get a Free Quote</button>
       </Link>
 
-      <p></p>
-      <img src={process.env.PUBLIC_URL + '/44 pictures.jpeg'} alt="Norah" />
-      <p></p>
+  <div className="grid gap-6 sm:grid-cols-2 my-6">
+  <img
+    src="https://firebasestorage.googleapis.com/v0/b/framing-norah.appspot.com/o/Summer25%2F44%20Pictures.jpeg?alt=media&token=217ddef0-715e-4e81-b898-9195c2afa18b"
+    alt="Gallery wall install – Glasgow"
+    className="rounded shadow w-full object-cover max-h-[400px]"
+
+  />
+</div>
 
       <h2>Why Choose Framing Norah?</h2>
       <ul>
