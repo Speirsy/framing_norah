@@ -11,29 +11,28 @@ body {
 /* Headings */
 h1 {
   font-size: 3rem; /* 48px */
-  font-family: 'Palatino', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Rockwell, Haettenschweiler, 'Arial Narrow Bold', sans-serif, copperplate, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Rockwell, Haettenschweiler, 'Arial Narrow Bold', sans-serif, copperplate, sans-serif;
   color: #0d0909; /* Adjust color as needed */
   margin-bottom: 0.5em;
 }
 
 h2 {
   font-size: 2.25rem; /* 36px */
-  font-family: 'Palatino', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Rockwell, Haettenschweiler, 'Arial Narrow Bold', sans-serif, copperplate, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Rockwell, Haettenschweiler, 'Arial Narrow Bold', sans-serif, copperplate, sans-serif;
   color: #090404; /* Adjust color as needed */
   margin-bottom: 0.5em;
 }
 
 h3 {
   font-size: 1.5rem; /* 24px */
-  font-family: 'Palatino', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Rockwell, Haettenschweiler, 'Arial Narrow Bold', sans-serif, copperplate, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Rockwell, Haettenschweiler, 'Arial Narrow Bold', sans-serif, copperplate, sans-serif;
   color: #090404; /* Adjust color as needed */
   margin-bottom: 0.5em;
 }
 
 h4 {
   font-size: 1.5rem; /* 24px */
-  font-family: 'Palatino', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Rockwell, Haettenschweiler, 'Arial Narrow Bold', sans-serif, copperplate, sans-serif;
-  /* font-style: italic; */
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Rockwell, Haettenschweiler, 'Arial Narrow Bold', sans-serif, copperplate, sans-serif;
   color: #090404; /* Adjust color as needed */
   margin-bottom: 0.5em;
 }
@@ -77,9 +76,30 @@ img {
 /* Centered content */
 .centered {
   text-align: center;
-  margin-top: 50px; /* Adjust as needed */
+  margin-top: 50px;
+  padding: 2rem;
+  min-height: 100vh;
+  background: transparent;
 }
+
 
 .centered .line-break {
   display: block;
+}
+/* Clean pitch text formatting */
+.centered p {
+  font-size: 1.125rem; /* 18px for readability */
+  margin-bottom: 0.75em;
+}
+
+.centered strong {
+  font-weight: bold;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #fdfbfb, #b6e1f7); /* Or your preferred sheen */
+  background-attachment: fixed;
 }

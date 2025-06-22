@@ -28,8 +28,10 @@ const Flatpack = () => {
 
 
   return (
-    <div className="max-w-3xl mx-auto p-6">
+    <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
+
       <h1 className="text-3xl font-bold mb-4 text-center">
+        
         Flat Pack Assembly in Glasgow & Surrounding Areas
       </h1>
 <PhotoList photos={flatpackPhotos} />
