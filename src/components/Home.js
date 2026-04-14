@@ -30,7 +30,7 @@ const Home = () => {
 
   return (
     <div className="centered">
-      <h1>Expert Mirror & Picture Hanging Service in Glasgow, Edinburgh And Beyond </h1>
+      <h1>Picture & Mirror Hanging Specialist – Glasgow & Edinburgh</h1>
 
 <div className="grid gap-6 sm:grid-cols-2 my-6">
   <img
@@ -48,20 +48,25 @@ const Home = () => {
 
 
       <p></p>
-<h2>Your Go-To Expert for Hanging Pictures, Mirrors and More</h2>
+<h2>Clean, level installations that stay exactly where they should</h2>
 
 <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
 
-  <p><strong>Picture Hanging – Let Us Take Care Of It</strong></p>
+  <p><strong>Picture & Mirror Hanging – Let Us Take Care Of It</strong></p>
+
+  <h2>Send me a photo for a quick quote today</h2>
+<p>Text or WhatsApp your wall or frames and I’ll get back to you quickly.</p>
+<p><strong>07989 226593</strong></p>
+
+  
   <p>Maybe you…</p>
 
   <p><strong>Have moved house?</strong> <Link to="/contact" className="text-blue-600 underline hover:text-blue-800">Get settled in sooner.</Link></p>
-  <p><strong>Don't have the tools or the "bits"?</strong> <Link to="/contact" className="text-blue-600 underline hover:text-blue-800">BIG ladders, tiny screws – we’ve got it all.</Link></p>
+  <p><strong>Don't have the tools?</strong> <Link to="/contact" className="text-blue-600 underline hover:text-blue-800">BIG ladders, tiny screws – we’ve got it all.</Link></p>
   <p><strong>Can’t reach or “it’s too heavy”?</strong> <Link to="/contact" className="text-blue-600 underline hover:text-blue-800">We can get it “up there”.</Link></p>
   <p><strong>Just don’t have the time?</strong> <Link to="/contact" className="text-blue-600 underline hover:text-blue-800">We can do it for you.</Link></p>
 
-
-      <p>With decades of experience in picture framing and carefully handling cherished artifacts, I bring precision and flair to every installation. Your walls will thank you!</p>
+      <p>With decades of experience in picture framing and carefully handling artwork and frames, I bring precision and flair to every installation. Your home will finally feel finished!</p>
       <p>Need help with your flat pack furniture? I’m also a dab hand with IKEA and other assembly tasks.</p>
 </div>
       <Link to="/contact">
