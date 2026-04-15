@@ -69,11 +69,16 @@ function ContactForm() {
 
         <div className='centered'>
             <p>Please tell us as much as you can about the work you would like us to do.</p>
-            <p>It will help us to help you, and give you a more accurate estimate.</p>
-            <p>Click here for suggestions.-</p>
-            <button onClick={() => setShowIdeas(!showIdeas)}>
-                {showIdeas ? 'Hide' : ''} Food For Thought
-            </button>
+             <p>It will help us to help you, and give you a more accurate estimate.</p>
+
+              <p style={{ marginTop: '1rem', fontWeight: 'bold' }}>
+               Alternatively, you can call or WhatsApp on 07989 226593
+             </p>
+
+    <p>Click here for suggestions.-</p>
+           <button onClick={() => setShowIdeas(!showIdeas)}>
+    {showIdeas ? 'Hide suggestions' : 'Show suggestions'}
+</button>
             {showIdeas && (
                 <ul>
                     <li>What type of work you would like done?</li>

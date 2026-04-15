@@ -58,7 +58,13 @@ const Home = () => {
 <p>Text or WhatsApp your wall or frames and I’ll get back to you quickly.</p>
 <p><strong>07989 226593</strong></p>
 
-  
+  <p>
+  Looking for a <Link to="/glasgow" className="text-blue-600 underline hover:text-blue-800">
+    picture hanger in Glasgow
+  </Link>? 
+  I provide clean, level installations across the West End and wider city.
+</p>
+
   <p>Maybe you…</p>
 
   <p><strong>Have moved house?</strong> <Link to="/contact" className="text-blue-600 underline hover:text-blue-800">Get settled in sooner.</Link></p>
