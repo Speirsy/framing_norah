@@ -9,7 +9,7 @@ const getMedia = async () => {
     const mediaSnapshot = await getDocs(mediaRef);
     const mediaData = mediaSnapshot.docs.map(doc => doc.data());
      // Print mediaData to the console
-    console.log('Media Data:', mediaData);
+    // console.log('Media Data:', mediaData);
     return mediaData;
    
   } catch (error) {

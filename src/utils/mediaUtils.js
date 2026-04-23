@@ -29,16 +29,22 @@ export const renderMedia = (mediaUrl) => {
       );
     }
   
-    // Check for MP4, WebM, OGG videos, including Firebase-hosted videos
-    if (mediaUrl.match(/\.(mp4|webm|ogg)$/) || (mediaUrl.includes("firebasestorage") && mediaUrl.includes(".mp4"))) {
-      console.log("Rendering video:", mediaUrl); // Debugging log
-      return (
-        <video width="400" height="285" controls>
-          <source src={mediaUrl} type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-      );
-    }
+// Check for MP4, WebM, OGG videos, including Firebase-hosted videos
+if (
+  mediaUrl.match(/\.(mp4|webm|ogg)$/) ||
+  (mediaUrl.includes("firebasestorage") && mediaUrl.includes(".mp4"))
+) {
+  // if (process.env.NODE_ENV === "development") {
+  //   console.log("Rendering video:", mediaUrl);
+  // }
+
+  return (
+    <video width="400" height="285" controls>
+      <source src={mediaUrl} type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+  );
+}
   
     // Check for audio (MP3, WAV)
     if (mediaUrl.match(/\.(mp3|wav)$/)) {

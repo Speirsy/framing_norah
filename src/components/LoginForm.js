@@ -12,7 +12,7 @@ const LoginForm = () => {
 
     try {
       await signInWithEmailAndPassword(auth, email, password);
-      console.log('Signed in successfully');
+      // console.log('Signed in successfully');
       // Redirect or show admin UI for authenticated user
     } catch (err) {
       setError(err.message);

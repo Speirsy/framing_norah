@@ -55,11 +55,11 @@ function ContactForm() {
             message: description
         }, '3nIfM1I_TSBAb6CzH')
             .then((response) => {
-                console.log('Email sent successfully:', response);
+                // console.log('Email sent successfully:', response);
                 setSubmitted(true);
             })
             .catch((error) => {
-                console.error('Error sending email:', error);
+                // console.error('Error sending email:', error);
                 alert('Failed to submit form. Please try again later.');
             });
     };

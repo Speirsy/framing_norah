@@ -42,7 +42,7 @@ const BlogForm = () => {
       // Save the blog to Firestore
       const savedBlog = await saveBlog(newBlog);
 
-      console.log('Blog saved successfully:', savedBlog); // Debugging
+      // console.log('Blog saved successfully:', savedBlog); // Debugging
 
       // Redirect to the main blog list page or specific blog details page
       navigate(`/blog/${savedBlog.slug}`); // Redirect to the details page using the slug

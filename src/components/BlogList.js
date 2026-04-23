@@ -24,32 +24,34 @@ const BlogList = ({ blogs }) => {
     );
   };
 
-  // Detect and render media types
-  const renderMedia = (mediaUrl) => {
-    if (!mediaUrl) return null;
-  
-    console.log("Processing Media URL:", mediaUrl);
-  
-    const youtubeRegex =
-      /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
-  
-    // Check for YouTube videos
-    if (youtubeRegex.test(mediaUrl)) {
-      const match = mediaUrl.match(youtubeRegex);
-      return (
-        <iframe
-          key={mediaUrl}
-          width="400"
-          height="285"
-          className="video-item"
-          src={`https://www.youtube.com/embed/${match[1]}`}
-          title="YouTube video player"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-        />
-      );
-    }
+ // Detect and render media types
+const renderMedia = (mediaUrl) => {
+  if (!mediaUrl) return null;
+
+  // if (process.env.NODE_ENV === "development") {
+  //   console.log("Processing Media URL:", mediaUrl);
+  // }
+
+  const youtubeRegex =
+    /(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
+
+  // Check for YouTube videos
+  if (youtubeRegex.test(mediaUrl)) {
+    const match = mediaUrl.match(youtubeRegex);
+    return (
+      <iframe
+        key={mediaUrl}
+        width="400"
+        height="285"
+        className="video-item"
+        src={`https://www.youtube.com/embed/${match[1]}`}
+        title="YouTube video player"
+        frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen
+      />
+    );
+  }
   
     // Check for Firebase storage image URLs or other common image formats
     if (
