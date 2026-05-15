@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { getMedia } from '../MediaRepository';
 import PhotoList from '../containers/PhotoList';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Helmet } from "react-helmet";
 
 const Flatpack = () => {
   const [media, setMedia] = useState([]);
@@ -26,11 +27,21 @@ const Flatpack = () => {
 
     const flatpackPhotos = media.filter(mediaItem => mediaItem.category === 'FlatpackPhoto');
 
+return (
+  <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
 
-  return (
-    <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
+    <Helmet>
+      <title>
+        Flat Pack Assembly Glasgow | Framing Norah
+      </title>
 
-      <h1 className="text-3xl font-bold mb-4 text-center">
+      <meta
+        name="description"
+        content="Flat pack furniture assembly across Glasgow and surrounding areas. IKEA wardrobes, beds, shelving, drawers and home furniture assembled carefully and securely."
+      />
+    </Helmet>
+
+    <h1 className="text-3xl font-bold mb-4 text-center">
         
         Flat Pack Assembly in Glasgow & Surrounding Areas
       </h1>

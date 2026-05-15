@@ -1,9 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Helmet } from "react-helmet";
 
 const Glasgow = () => {
   return (
     <div className="centered">
+
+      <Helmet>
+        <title>
+          Picture Hanging Glasgow | Framing Norah
+        </title>
+
+        <meta
+          name="description"
+          content="Professional picture hanging, mirror installation and gallery wall services across Glasgow and the West End. Specialist experience with tenement walls, plaster and sandstone properties."
+        />
+      </Helmet>
 
       <h1>Picture Hanging Glasgow</h1>
 

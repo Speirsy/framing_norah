@@ -4,6 +4,8 @@ import { getMedia } from '../MediaRepository';
 import VideoList from '../containers/VideoList';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import GoogleReviews from './GoogleReviews';
+import { Helmet } from "react-helmet";
+
 
 const Home = () => {
   const [media, setMedia] = useState([]);
@@ -29,8 +31,22 @@ const Home = () => {
   );
 
   return (
-    <div className="centered">
-      <h1>Picture & Mirror Hanging Specialist – Glasgow & Edinburgh</h1>
+
+     <div className="centered">
+    <Helmet>
+      <title>
+        Framing Norah | Picture Hanging & Mirror Installation Glasgow
+      </title>
+
+      <meta
+        name="description"
+        content="Specialist picture hanging, mirror installation and gallery wall services across Glasgow, Edinburgh and surrounding areas. Secure, level installations with over 30 years of experience."
+      />
+    </Helmet>
+
+    <h1>Picture & Mirror Hanging Specialist – Glasgow & Edinburgh</h1>
+
+
 
 <div className="grid gap-6 sm:grid-cols-2 my-6">
   <img
