@@ -51,6 +51,7 @@ function ContactForm() {
         emailjs.send('contact_service', 'contact_form', {
             from_name: name,
             from_email: email,
+            reply_to: email,
             phone: phone,
             message: description
         }, '3nIfM1I_TSBAb6CzH')
