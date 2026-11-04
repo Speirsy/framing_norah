@@ -5,7 +5,6 @@ This repository contains the source code for **Framing Norah**, a web applicatio
 ## Key Features
 
 - **Responsive Web Design**: Optimized for mobile, tablet, and desktop usage.
-- **Google Maps Integration**: Displays service areas around Glasgow West End.
 - **Blog System**: Managed through Firestore, allowing for content creation and updates.
 - **Authentication**: Firebase authentication is used to manage access to certain administrative functions such as posting new blog content.
 - **Image and Video Gallery**: A dynamic gallery that allows users to view various projects and portfolio items.

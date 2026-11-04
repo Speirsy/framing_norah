@@ -11,7 +11,6 @@ import Contact from "./components/Contact";
 import FlatPackAssemblyPage from "./components/FlatPackAssemblyPage";
 import Gallery from "./components/Gallery";
 import ErrorPage from "./components/ErrorPage";
-// import Locations from "./components/Locations";
 import Blog from "./components/Blog";
 import BlogForm from "./components/BlogForm";
 import BlogDetails from "./components/BlogDetails";
@@ -40,7 +39,6 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/gallery" element={<Gallery />} />
-        {/* <Route path="/Picture_Hanging_Service_Glasgow" element={<Locations />} /> */}
         <Route path="/CV" element={<CV />} />
         <Route path="/flatpack-assembly-glasgow" element={<FlatPackAssemblyPage />} />
     

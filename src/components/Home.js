@@ -3,7 +3,6 @@ import './Home.css';
 import { getMedia } from '../MediaRepository';
 import VideoList from '../containers/VideoList';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
-import GoogleReviews from './GoogleReviews';
 import { Helmet } from "react-helmet";
 
 
@@ -137,8 +136,6 @@ const Home = () => {
         )}
       </div>
 
-      <h2>What Our Customers Are Saying</h2>
-      <GoogleReviews />
     </div>
   );
 };
