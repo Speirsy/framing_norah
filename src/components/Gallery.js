@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { getMedia } from '../MediaRepository';
 import VideoList from '../containers/VideoList';
 import PhotoList from '../containers/PhotoList';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Gallery = () => {
   const [media, setMedia] = useState([]);
@@ -26,21 +25,19 @@ const Gallery = () => {
 
   const videos = media.filter(mediaItem => mediaItem.type === 'video' && mediaItem.category !== 'promo' && mediaItem.category !== 'pictureHanging');
   const framingPhotos = media.filter(mediaItem => mediaItem.portfolioGroup === 'LargsJobs');
-  
+
   const pictureHangingPhotos = media.filter(mediaItem => mediaItem.category === 'HangingPhoto');
   const pictureHangingVideo = media.filter(mediaItem => mediaItem.category === 'pictureHanging');
   return (
-    <div className="container text-center">
+    <div className="site-page site-page--wide">
       <h1>Portfolio</h1>
-      <h4>It's early days here at Framing Norah so we'll be updating this page when we're not out and about actually hanging mirrors, pictures and lots more. </h4>
-      <h4>
+      <p>It's early days here at Framing Norah so we'll be updating this page when we're not out and about actually hanging mirrors, pictures and lots more. </p>
+      <p>
         You'll also find a growing list of help, advice, articles and updates on our {' '}
         <Link to="/blog">BLOG</Link>.
-      </h4> 
+      </p>
       <p></p>
-      <Link to="/contact">
-        <button className="btn btn-primary mb-4">Contact Us</button>
-      </Link>
+      <Link to="/contact" className="site-button mb-4">Contact Us</Link>
 
       {loading ? (
         <p>Loading...</p>
@@ -52,13 +49,13 @@ const Gallery = () => {
             {/* <div className="col-md-8"> */}
               <PhotoList photos={pictureHangingPhotos} />
               <VideoList videos={pictureHangingVideo} />
-              
+
             </div>
-      
+
 
           {/* <h2>Picture Framing - Quick Portfolio</h2> */}
-          {/* <h4>Here is a small sample of images and videos that feature work from my days in bespoke picture framing. */}
-          {/* For more information, please get in touch.</h4> */}
+          {/* <p>Here is a small sample of images and videos that feature work from my days in bespoke picture framing. */}
+          {/* For more information, please get in touch.</p> */}
           {/* <VideoList videos={videos} /> */}
           {/* <PhotoList photos={framingPhotos} /> */}
         </>

@@ -1,105 +1,96 @@
-/* Base font size */
-html {
-  font-size: 16px; /* 1rem = 16px */
-}
-
-body {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif,'Arial', sans-serif;
-  line-height: 1.6; /* Adjust as needed for readability */
-}
-
-/* Headings */
-h1 {
-  font-size: 3rem; /* 48px */
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Rockwell, Haettenschweiler, 'Arial Narrow Bold', sans-serif, copperplate, sans-serif;
-  color: #0d0909; /* Adjust color as needed */
-  margin-bottom: 0.5em;
-}
-
-h2 {
-  font-size: 2.25rem; /* 36px */
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Rockwell, Haettenschweiler, 'Arial Narrow Bold', sans-serif, copperplate, sans-serif;
-  color: #090404; /* Adjust color as needed */
-  margin-bottom: 0.5em;
-}
-
-h3 {
-  font-size: 1.5rem; /* 24px */
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Rockwell, Haettenschweiler, 'Arial Narrow Bold', sans-serif, copperplate, sans-serif;
-  color: #090404; /* Adjust color as needed */
-  margin-bottom: 0.5em;
-}
-
-h4 {
-  font-size: 1.5rem; /* 24px */
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Rockwell, Haettenschweiler, 'Arial Narrow Bold', sans-serif, copperplate, sans-serif;
-  color: #090404; /* Adjust color as needed */
-  margin-bottom: 0.5em;
-}
-
-/* Paragraphs */
-p {
-  font-size: 1rem; /* 16px */
-  color: #050303; /* Adjust color as needed */
-  margin-bottom: 1em;
-}
-
-/* Buttons */
-button {
-  background: #007bff; /* Blue background */
-  color: #ffffff; /* White text color for better contrast */
-  border: none;
-  padding: 0.5rem 1rem; /* Adjust padding as needed */
-  font-size: 1rem; /* Adjust font size as needed */
-  border-radius: 4px; /* Rounded corners */
-  cursor: pointer;
-  margin-bottom: 1em;
-  transition: all 0.3s ease; /* Smooth transition for hover effects */
-}
-
-/* Enhanced Buttons */
-
-
-/* Hover effects */
-button:hover {
-  background: linear-gradient(135deg, #0ca306, #1dfe30); /* Reverse gradient on hover */
-  transform: scale(1.05); /* Slight scaling effect on hover */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
-}
-/* Images */
-img {
-  width: 100%;
-  max-width: 600px; /* Adjust as needed */
-  margin-top: 20px; /* Adjust as needed */
-}
-
-/* Centered content */
-.centered {
-  text-align: center;
-  margin-top: 50px;
-  padding: 2rem;
-  min-height: 100vh;
-  background: transparent;
-}
-
-
-.centered .line-break {
-  display: block;
-}
-/* Clean pitch text formatting */
-.centered p {
-  font-size: 1.125rem; /* 18px for readability */
-  margin-bottom: 0.75em;
-}
-
-.centered strong {
-  font-weight: bold;
-}
-
-html, body {
-  height: 100%;
+/* Homepage composition; typography and palette live in index.css. */
+.fn-home {
+  background: var(--color-ivory);
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: minmax(clamp(1.25rem, 4vw, 3rem), 1fr) minmax(0, 1180px) minmax(clamp(1.25rem, 4vw, 3rem), 1fr);
+  padding: 0 0 2rem;
   margin: 0;
-  padding: 0;
-  background: linear-gradient(135deg, #fdfbfb, #b6e1f7); /* Or your preferred sheen */
-  background-attachment: fixed;
+  text-align: left;
+}
+.fn-home > * { grid-column: 2; min-width: 0; width: 100%; }
+.fn-home h1 { max-width: 23ch; }
+.fn-home__intro, .fn-home__benefits { max-width: 720px; margin: 0 auto; }
+/* Keep the homepage review panel opaque without altering its controls or layout. */
+.fn-home .fn-reviews { background: var(--color-ivory); }
+.fn-home__opening {
+  margin: clamp(1.25rem, 3vw, 2.5rem) auto 0;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: var(--color-ivory);
+  border-radius: 12px;
+}
+.fn-home__hero { margin: 0; }
+.fn-home__opening .fn-home__photos { max-width: none; margin: 1.75rem 0; gap: clamp(1rem, 2vw, 1.5rem); }
+.fn-home__quote {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 1rem 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-border);
+}
+.fn-home__quote-copy { max-width: 60ch; }
+.fn-home__quote-copy p { max-width: 48ch; }
+.fn-home__quote .fn-home__phone { margin-bottom: 0; }
+
+.fn-home__intro,
+.fn-home__benefits,
+.fn-home .fn-home__section,
+.fn-home__videos {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: var(--color-ivory);
+  border-radius: 12px;
+}
+.fn-home__hero-content h1 { margin-bottom: 1rem; }
+.fn-home__hero-content .fn-home__lead { margin-bottom: 0; }
+.fn-home .fn-home__lead { font-size: clamp(1.15rem, 1rem + .65vw, 1.4rem); line-height: 1.55; max-width: 48ch; }
+.fn-home__intro { margin-block: 2rem; }
+.fn-home .fn-home__quote-title { font-size: var(--text-section); margin: 0 0 .75rem; }
+.fn-home .fn-home__phone { font-size: 1.125rem; font-weight: 600; letter-spacing: .02em; }
+.fn-home__benefits { margin-block: 2.5rem; }
+.fn-home__benefits ul { list-style: disc; padding-left: 1.25rem; margin: 0; }
+.fn-home__benefits li { margin-bottom: .5rem; padding-left: .25rem; }
+.fn-home__photos { display: grid; align-items: start; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 2rem auto; max-width: 880px; }
+.fn-home__photos img { display: block; width: 100%; max-width: 100%; height: auto; margin: 0; border-radius: 10px; }
+.fn-home__photos--single { grid-template-columns: minmax(0, 1fr); max-width: 640px; }
+/* Carousel typography remains owned by ReviewsCarousel.css, not duplicated here. */
+@media (max-width: 700px) {
+  .fn-home__quote { grid-template-columns: minmax(0, 1fr); }
+  .fn-home__quote .fn-home__booking { justify-self: start; }
+}
+@media (max-width: 560px) { .fn-home__photos { grid-template-columns: minmax(0, 1fr); } }
+
+.fn-home .fn-home__section {
+  box-sizing: border-box;
+  max-width: 720px;
+  margin: clamp(2rem, 5vw, 3rem) auto;
+  text-align: left;
+}
+.fn-home .fn-home__section h2 { margin: 0 0 1rem; }
+.fn-home .fn-home__steps {
+  list-style: decimal outside;
+  margin: 0;
+  padding: 0 0 0 1.75rem;
+  text-align: left;
+}
+.fn-home .fn-home__steps li {
+  display: list-item;
+  padding-inline-start: .4rem;
+  margin: 0 0 .8rem;
+  line-height: 1.65;
+}
+.fn-home .fn-home__steps li::marker { color: var(--color-olive); font-weight: 700; }
+.fn-home .fn-home__assembly p { max-width: 65ch; margin: 0 0 1.25rem; }
+.fn-home__videos { width: 100%; max-width: 640px; margin: 2rem auto; }
+.fn-home__videos video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 70vh;
+  object-fit: contain;
+  background: #1f211d;
+}
+@media (max-width: 480px) {
+  .fn-home__booking { width: 100%; }
 }

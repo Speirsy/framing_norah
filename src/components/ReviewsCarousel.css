@@ -1,0 +1,60 @@
+.fn-reviews {
+  box-sizing: border-box;
+  max-width: 880px;
+  margin: 3rem auto;
+  padding: clamp(1.25rem, 4vw, 3rem);
+  border: 1px solid #dfd4c5;
+  border-radius: 20px;
+  background: var(--color-stone);
+  color: #302d28;
+  text-align: center;
+  box-shadow: 0 12px 32px rgb(54 43 28 / 8%);
+}
+.fn-reviews h2 { font-size: clamp(1.65rem, 4vw, 2.3rem); color: #302d28; margin: 0 0 .25rem; }
+.fn-reviews p { color: #494238; }
+.fn-reviews__stage {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) 44px;
+  gap: clamp(0rem, 1vw, .75rem);
+  align-items: center;
+}
+.fn-reviews__stage--single { grid-template-columns: minmax(0, 1fr); }
+/* All slides occupy the same grid cell. Hidden slides still reserve their
+   natural height, so the longest review sets the row size at every width/font. */
+.fn-reviews__viewport { display: grid; align-items: center; touch-action: pan-y; min-width: 0; }
+.fn-reviews__card {
+  grid-area: 1 / 1;
+  align-self: center;
+  min-width: 0;
+  width: 100%;
+  padding: .25rem 0 1rem;
+  overflow-wrap: anywhere;
+}
+.fn-reviews__card[data-active="false"] { visibility: hidden; pointer-events: none; }
+.fn-reviews__card[data-active="true"] { visibility: visible; }
+/* Arrow columns centre on the stable stage, never on the active slide. */
+.fn-reviews__stage > .fn-reviews__arrow { align-self: center; }
+.fn-reviews .fn-reviews__stars { color: #8b5915; font-size: 1.5rem; letter-spacing: .15em; }
+.fn-reviews blockquote { margin: 1rem 0; text-align: left; }
+.fn-reviews blockquote p { font-size: clamp(1.05rem, 2vw, 1.25rem); line-height: 1.75; white-space: pre-line; }
+.fn-reviews .fn-reviews__author { margin-bottom: .15rem; font-weight: 700; }
+.fn-reviews time { font-size: 1rem; color: #645b50; }
+.fn-reviews a { color: var(--color-olive); text-underline-offset: .2em; }
+.fn-reviews__source { display: block; margin-top: 1rem; }
+.fn-reviews__controls { display: flex; justify-content: center; margin: .25rem 0; }
+.fn-reviews button, .fn-reviews button:hover {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-width: 44px; min-height: 44px; padding: 0; margin: 0;
+  background: transparent; border: 0; color: #6a6257;
+  border-radius: 4px; transform: none; box-shadow: none; transition: none;
+}
+.fn-reviews button:hover { color: #302d28; }
+.fn-reviews .fn-reviews__arrow { font-size: 2.5rem; font-weight: 400; line-height: 1; }
+.fn-reviews .fn-reviews__rotation { color: #6a6257; }
+.fn-reviews .fn-reviews__all { display: inline-block; padding: .85rem 1.2rem; margin-top: 1rem; border-radius: 8px; background: var(--color-olive); color: var(--color-ivory); font-weight: 700; }
+.fn-reviews :focus-visible { outline: 3px solid #8b5915; outline-offset: 4px; }
+.fn-reviews__sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+@media (max-width: 480px) {
+  .fn-reviews { margin: 2rem -.5rem; }
+  .fn-reviews .fn-reviews__all { display: block; }
+}

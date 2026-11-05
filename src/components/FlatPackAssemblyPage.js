@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { getMedia } from '../MediaRepository';
 import PhotoList from '../containers/PhotoList';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import { Helmet } from "react-helmet";
 
 const Flatpack = () => {
@@ -28,7 +27,7 @@ const Flatpack = () => {
     const flatpackPhotos = media.filter(mediaItem => mediaItem.category === 'FlatpackPhoto');
 
 return (
-  <div style={{ maxWidth: "700px", margin: "0 auto", textAlign: "center" }}>
+  <div className="site-page">
 
     <Helmet>
       <title>
@@ -41,16 +40,16 @@ return (
       />
     </Helmet>
 
-    <h1 className="text-3xl font-bold mb-4 text-center">
+    <h1 className="mb-4">
         
         Flat Pack Assembly in Glasgow & Surrounding Areas
       </h1>
 <PhotoList photos={flatpackPhotos} />
-      <h2 className="mb-4">
+      <p className="mb-4">
         Let Framing Norah handle your flat pack frustrations. We assemble furniture all over
         <strong> Glasgow</strong>, and beyond. Whether it’s an IKEA wardrobe,
         a B&Q bed, or a mystery unit with 96 screws and no words, we’ll get it built securely and neatly.
-      </h2>
+      </p>
 
       <h2 className="text-xl font-semibold mt-6 mb-2">What We Assemble</h2>
       <ul className="list-disc list-inside mb-4">

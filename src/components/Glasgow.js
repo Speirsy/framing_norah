@@ -67,9 +67,7 @@ const Glasgow = () => {
         feel free to get in touch.
       </p>
 
-      <Link to="/contact">
-        <button className="btn">Get a Free Quote</button>
-      </Link>
+      <Link to="/contact" className="site-button">Get a Free Quote</Link>
 
       <p style={{ marginTop: '2rem' }}>
         Want to know more about how I work?

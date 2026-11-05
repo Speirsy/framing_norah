@@ -1,61 +1,41 @@
-import React, { useState } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import React, { useEffect, useRef, useState } from 'react';
+import './PhotoList.css';
 
-const PhotoList = ({ photos }) => {
+export default function PhotoList({ photos }) {
   const [selectedPhoto, setSelectedPhoto] = useState(null);
-
-  const openModal = (photo) => {
-    setSelectedPhoto(photo);
-  };
-
-  const closeModal = () => {
-    setSelectedPhoto(null);
-  };
-
+  const dialog = useRef(null);
+  const opener = useRef(null);
+  useEffect(() => {
+    if (!selectedPhoto) return undefined;
+    const element = dialog.current;
+    element.showModal();
+    return () => { element.close(); opener.current?.focus(); };
+  }, [selectedPhoto]);
   return (
     <>
-      <div className="row justify-content-center">
-        {photos && photos.map((photoItem, index) => (
-          <div key={index} className="col-md-4 mb-4">
-            <div className="card">
-              <img 
-                src={photoItem.url} 
-                alt={photoItem.name} 
-                className="card-img-top" 
-                onClick={() => openModal(photoItem)} // Opens the modal when clicked
-                style={{ cursor: 'pointer' }}
-              />
-              <div className="card-body">
-                <h5 className="card-title">{photoItem.name}</h5>
-                {/* <p className="card-text text-muted">{photoItem.description}</p> */}
-              </div>
-            </div>
-          </div>
+      <div className="photo-gallery">
+        {photos?.map((photo, index) => (
+          <figure className="photo-gallery__item" key={photo.id || photo.url || index}>
+            <button type="button" className="photo-gallery__open"
+              aria-label={`Enlarge ${photo.name || 'project photo'}`} onClick={event => {
+                opener.current = event.currentTarget; setSelectedPhoto(photo);
+              }}>
+              <img src={photo.url} alt={photo.name || photo.description || 'Framing Norah installation'} loading="lazy" />
+            </button>
+            {photo.name && <figcaption>{photo.name}</figcaption>}
+          </figure>
         ))}
       </div>
-
-      {/* Bootstrap Modal */}
-      {selectedPhoto && (
-        <div className="modal fade show d-block" tabIndex="-1" style={{ backgroundColor: 'rgba(0,0,0,0.5)' }}>
-          <div className="modal-dialog modal-lg">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title">{selectedPhoto.name}</h5>
-                <button type="button" className="btn-close" onClick={closeModal}></button>
-              </div>
-              <div className="modal-body">
-                <img src={selectedPhoto.url} alt={selectedPhoto.name} className="img-fluid" />
-                <p className="mt-3">{selectedPhoto.description}</p>
-              </div>
-            </div>
-          </div>
+      {selectedPhoto && <dialog ref={dialog} className="gallery-dialog" aria-labelledby="gallery-dialog-title"
+        onCancel={event => { event.preventDefault(); setSelectedPhoto(null); }}
+        onClick={event => { if (event.target === event.currentTarget) setSelectedPhoto(null); }}>
+        <div className="gallery-dialog__content">
+          <header><h2 id="gallery-dialog-title">{selectedPhoto.name || 'Project photo'}</h2>
+            <button type="button" aria-label="Close image" onClick={() => setSelectedPhoto(null)}>×</button></header>
+          <img src={selectedPhoto.url} alt={selectedPhoto.name || selectedPhoto.description || 'Framing Norah installation'} />
+          {selectedPhoto.description && <p>{selectedPhoto.description}</p>}
         </div>
-      )}
+      </dialog>}
     </>
   );
-};
-
-export default PhotoList;
-
-
-
+}

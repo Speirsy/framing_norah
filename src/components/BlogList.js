@@ -65,7 +65,7 @@ const renderMedia = (mediaUrl) => {
           src={mediaUrl}
           alt="blog media"
           className="blog-media"
-          style={{ maxWidth: "50%", height: "auto" }}
+          loading="lazy"
         />
       );
     }

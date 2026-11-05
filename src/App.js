@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { onAuthStateChanged } from 'firebase/auth'; // Firebase Auth listener
 import { auth } from './firebase'; // Import your Firebase config
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 import NavBar from "./components/NavBar";
 import About from "./components/About";
@@ -33,7 +32,9 @@ const App = () => {
 
   return (
     <BrowserRouter>
+      <a href="#main-content" className="skip-link">Skip to content</a>
       <NavBar />
+      <main id="main-content" className="site-main" tabIndex="-1">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
@@ -60,6 +61,7 @@ const App = () => {
         {/* Error page for unmatched routes */}
         <Route path="*" element={<ErrorPage />} />
       </Routes>
+      </main>
     </BrowserRouter>
   );
 };

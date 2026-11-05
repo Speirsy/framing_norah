@@ -1,28 +1,4 @@
-/* Remove bullet points and reset list styling */
-ul {
-  list-style-type: none; /* Remove bullet points */
-  padding: 0;            /* Remove default padding */
-  margin: 0;             /* Remove default margin */
-}
-
-/* Style individual list items */
-li {
-  margin-bottom: 20px;   /* Add spacing between list items */
-}
-
-/* Style for blog media (images, videos, etc.) */
-.blog-media {
-  max-width: 25%;      /* Restrict the media width to 25% */
-  height: auto;        /* Maintain aspect ratio */
-  display: block;      /* Ensure it’s treated as a block element */
-  margin: 0 auto;      /* Center the media */
-}
-
-
-
-  .blog-item {
-  text-align: left;
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-  
+ .blog-list > ul { list-style: none; padding: 0; margin: 0; }
+.blog-list .blog-item { text-align: left; padding-block: 1.5rem; border-bottom: 1px solid var(--color-border); }
+.blog-list .blog-item h2 { margin-top: 0; }
+.blog-list .load-more { margin-top: 1.5rem; }

@@ -1,36 +1,4 @@
-/* MediaList.css */
-
-.video-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-  }
-  
-  .video-item {
-    margin: 10px;
-    text-align: center;
-  }
-  
-  .video-content {
-    width: auto;
-    height: 300px;
-    /* max-width: 40%; */
-  }
-  
-  .description {
-    display: none;
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: rgba(123, 121, 121, 0.7);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 5px;
-  }
-  
-  .video-item:hover .description {
-    display: block;
-  }
+.video-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr)); gap: 1.5rem; margin-block: 1.5rem; }
+.video-gallery__item { min-width: 0; }
+.video-gallery video { border-radius: 12px; }
+.video-gallery figcaption { padding-top: .75rem; }

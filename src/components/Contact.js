@@ -4,7 +4,7 @@ import ContactForm from '../containers/ContactForm';
 const Contact = () => {
   return (
     <div className="centered">
-      <h2>Contact Us</h2>
+      <h1>Contact Us</h1>
       <ContactForm />
     </div>
   );

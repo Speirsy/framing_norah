@@ -1,69 +1,16 @@
-/* NavBar.css */
-
-.navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f2f2f2;
-    padding: 10px;
-  }
-  
-  .nav-menu {
-    list-style-type: none;
-    display: flex;
-    gap: 10px;
-  }
-  
-  .nav-menu.active {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .nav-menu li {
-    padding: 5px;
-  }
-  
-  .nav-menu a {
-    text-decoration: none;
-    color: #010000;
-  }
-  
-  .nav-menu a:hover {
-    color: #090808;
-  }
-  
-  .burger {
-    display: none;
-    cursor: pointer;
-  }
-  
-  .line {
-    width: 25px;
-    height: 3px;
-    background-color: #333;
-    margin: 5px;
-    transition: transform 0.3s ease;
-  }
-  
-  .open.line1 {
-    transform: rotate(-45deg) translate(-5px, 6px);
-  }
-  
-  .open.line2 {
-    opacity: 0;
-  }
-  
-  .open.line3 {
-    transform: rotate(45deg) translate(-5px, -6px);
-  }
-  
-  /* Media query for mobile devices */
-  @media (max-width: 768px) {
-    .nav-menu {
-      display: none;
-    }
-  
-    .burger {
-      display: block;
-    }
-  }
+.site-nav { background: var(--color-ivory); border-bottom: 1px solid var(--color-border); }
+.site-nav__inner { max-width: 1280px; margin: auto; padding: .85rem clamp(1rem, 3vw, 2rem); display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; }
+.site-nav__brand { text-decoration: none; font-size: 1.4rem; font-weight: 650; letter-spacing: -.04em; line-height: 1.25; white-space: nowrap; }
+.site-nav__brand span { display: block; font-size: 1rem; font-weight: 400; letter-spacing: 0; margin-top: .2rem; color: var(--color-muted); }
+.site-nav__links { display: flex; align-items: center; gap: 1.1rem; }
+.site-nav__links a { font-size: 1rem; text-decoration: none; padding-block: .5rem; }
+.site-nav__links a[aria-current="page"]:not(.site-button) { text-decoration: underline; text-decoration-thickness: 2px; }
+.site-nav__links .site-nav__quote { color: var(--color-ivory); padding: .7rem 1rem; }
+.site-nav__toggle { display: none; background: transparent; color: var(--color-olive); gap: .65rem; padding: .5rem .75rem; }
+.site-nav__toggle:hover { background: var(--color-stone); color: var(--color-olive); }
+@media (max-width: 1080px) {
+  .site-nav__toggle { display: inline-flex; }
+  .site-nav__links { display: none; flex-basis: 100%; flex-direction: column; align-items: stretch; gap: .25rem; padding-top: .5rem; }
+  .site-nav__links.is-open { display: flex; }
+  .site-nav__links a { padding: .65rem .5rem; }
+}

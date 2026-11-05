@@ -1,49 +1,13 @@
-/* PhotoList.css */
-.photo-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-
-
-.photo-item {
-    position: relative;
-    overflow: hidden;
-    border: 10px solid transparent; /* Initially, a transparent border */
-    transition: transform 0.5s ease-in-out, border-color 0.5s ease-in-out; /* Add border color transition */
-}
-
-.photo-content {
-    
-    height: 200px;
-    width: auto; 
-}
-
-.photo-item:hover {
-    border-color: rgb(76, 41, 41); /* Change border color when hovering */
-}
-
-.photo-item:hover .photo-content {
-    transform: scale(2); /* Increase size on hover */
-}
-
-.description-box {
-    justify-content: center;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 50%;
-    
-    background-color: rgba(139, 139, 139, 0.7); /* Semi-transparent background */
-    padding: 10px;
-    color: #fff;
-    font-size: 15px;
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.5s ease-in-out;
-}
-
-.photo-item:hover .description-box {
-    opacity: 1; /* Show description on hover */
-}
+.photo-gallery { columns: 3 260px; column-gap: 1.25rem; margin-block: 1.5rem 2rem; }
+.photo-gallery__item { break-inside: avoid; margin: 0 0 1.25rem; }
+.photo-gallery .photo-gallery__open, .photo-gallery .photo-gallery__open:hover { display: block; width: 100%; padding: 0; min-height: 0; border: 0; background: transparent; border-radius: 10px; }
+.photo-gallery img { width: 100%; height: auto; border-radius: 10px; }
+.photo-gallery figcaption { padding: .65rem .15rem 0; line-height: 1.45; }
+.gallery-dialog { max-width: min(960px, calc(100% - 2rem)); max-height: 90vh; padding: 0; border: 0; border-radius: 12px; background: var(--color-ivory); color: var(--color-ink); }
+.gallery-dialog::backdrop { background: rgb(32 37 31 / 75%); }
+.gallery-dialog__content { padding: clamp(1rem, 3vw, 2rem); }
+.gallery-dialog header { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+.gallery-dialog h2 { font-size: 1.25rem; margin: 0; }
+.gallery-dialog img { width: 100%; height: auto; max-height: 70vh; object-fit: contain; }
+.gallery-dialog p { margin: 1rem 0 0; }
+@media (max-width: 560px) { .photo-gallery { columns: 1; } }

@@ -68,7 +68,7 @@ function ContactForm() {
 
     return (
 
-        <div className='centered'>
+        <div className='contact-form'>
             <p>Please tell us as much as you can about the work you would like us to do.</p>
              <p>It will help us to help you, and give you a more accurate estimate.</p>
 
