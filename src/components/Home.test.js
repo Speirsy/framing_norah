@@ -60,3 +60,18 @@ test('ivory homepage preserves its opening and excludes the disabled background 
   expect(screen.queryByRole('group', { name: 'Local background preview' })).not.toBeInTheDocument();
   await screen.findByRole('heading', { name: 'How It Works' });
 });
+
+test('laser-level photograph precedes reviews with a discreet About link', async () => {
+  getMedia.mockResolvedValue([]);
+  render(<MemoryRouter><Home /></MemoryRouter>);
+  const image = screen.getByAltText('John aligning framed artwork with a laser level');
+  expect(image).toHaveAttribute('width', '1000');
+  expect(image).toHaveAttribute('height', '667');
+  expect(image).toHaveAttribute('loading', 'lazy');
+  expect(image).toHaveAttribute('srcset', expect.stringContaining('600w'));
+  const figure = image.closest('figure');
+  expect(within(figure).getByRole('link', { name: 'More about me' })).toHaveAttribute('href', '/about');
+  expect(within(figure).queryByRole('heading')).not.toBeInTheDocument();
+  expect(figure.nextElementSibling).toHaveAttribute('aria-label', 'Customer reviews');
+  await screen.findByRole('heading', { name: 'How It Works' });
+});

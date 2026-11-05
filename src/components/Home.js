@@ -3,6 +3,8 @@ import './Home.css';
 import { getMedia } from '../MediaRepository';
 import VideoList from '../containers/VideoList';
 import ReviewsCarousel from './ReviewsCarousel';
+import laserLevelPhoto from '../assets/framing-norah-laser-level-1000.jpg';
+import laserLevelPhotoSmall from '../assets/framing-norah-laser-level-600.jpg';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import { Helmet } from "react-helmet";
 
@@ -120,6 +122,15 @@ const Home = () => {
         <li>Professional and reliable service in your home</li>
       </ul>
       </section>
+
+      <figure className="fn-home__action-photo">
+        <img src={laserLevelPhoto}
+          srcSet={`${laserLevelPhotoSmall} 600w, ${laserLevelPhoto} 1000w`}
+          sizes="(max-width: 880px) 90vw, 800px"
+          width="1000" height="667" loading="lazy" decoding="async"
+          alt="John aligning framed artwork with a laser level" />
+        <figcaption><Link to="/about">More about me</Link></figcaption>
+      </figure>
 
       <ReviewsCarousel />
 

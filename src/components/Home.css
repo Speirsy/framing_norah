@@ -54,6 +54,10 @@
 .fn-home__photos img { display: block; width: 100%; max-width: 100%; height: auto; margin: 0; border-radius: 10px; }
 .fn-home__photos--single { grid-template-columns: minmax(0, 1fr); max-width: 640px; }
 /* Carousel typography remains owned by ReviewsCarousel.css, not duplicated here. */
+.fn-home__action-photo { max-width: 800px; margin: 0 auto 1rem; }
+.fn-home__action-photo img { width: 100%; height: auto; border-radius: 10px; }
+.fn-home__action-photo figcaption { margin-top: .6rem; text-align: right; }
+.fn-home__action-photo a { font-size: var(--text-support); font-weight: 400; }
 @media (max-width: 700px) {
   .fn-home__quote { grid-template-columns: minmax(0, 1fr); }
   .fn-home__quote .fn-home__booking { justify-self: start; }

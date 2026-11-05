@@ -1,5 +1,7 @@
 import React from 'react';
 import './About.css';
+import portraitPhoto from '../assets/framing-norah-portrait-667.jpg';
+import portraitPhotoSmall from '../assets/framing-norah-portrait-400.jpg';
 
 const About = () => (
 
@@ -12,9 +14,12 @@ const About = () => (
     </p>
     <p>
         At Framing Norah, my goal is to help you beautify your home. Whether it’s a cherished family portrait, a stunning piece of artwork, or a quirky poster, I have the skills and expertise to ensure they are securely and beautifully displayed, just where you want them.
-<img src={process.env.PUBLIC_URL + '/Glasgow_Norah.jpg'} alt="Framing Norah" loading="lazy" />
+<img className="about-page__portrait" src={portraitPhoto}
+  srcSet={`${portraitPhotoSmall} 400w, ${portraitPhoto} 667w`}
+  sizes="(max-width: 600px) 90vw, 520px"
+  width="667" height="667" alt="John beside framed artwork" loading="lazy" decoding="async" />
 
-<br />I take pride in using only the best hanging materials and equipment. You can trust that with Framing Norah, your art will stay up straight and secur - no more worrying about crooked frames or flimsy hooks. Quality and durability are my top priorities.
+<br />I take pride in using only the best hanging materials and equipment. You can trust that with Framing Norah, your art will stay up straight and secure - no more worrying about crooked frames or flimsy hooks. Quality and durability are my top priorities.
 </p>
 <p>
 Do you have DIY framing project that didn’t go as planned? Don’t worry. I specialize in fixing "off the shelf" mounts and frames that don’t work. I’ll bring my know - how to sort them out.
@@ -26,7 +31,6 @@ Do you have DIY framing project that didn’t go as planned? Don’t worry. I sp
 If you’re tired of struggling with your frames or want to ensure your artwork is hung with care and precision, look no further than Framing Norah. I provide personalized service tailored to your needs, right at your doorstep. Let’s transform your walls into a gallery-worthy masterpiece, one frame at a time!
 </p>
 
- <img src={process.env.PUBLIC_URL + '/Glasgow_Picture_Hanger.jpeg'} alt="Framing Norah" loading="lazy" />
   </div>
 
 );
