@@ -1,0 +1,33 @@
+.site-theme { min-height: 100svh; }
+.site-theme--christmas { --seasonal-overlay-opacity: .75; position: relative; isolation: isolate; }
+.seasonal-background {
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background: var(--color-ivory) url('../assets/christmas-tree-1536.jpg') 36% 50% / cover no-repeat;
+}
+.seasonal-background::after {
+  content: ''; position: absolute; inset: 0; pointer-events: none;
+  background: rgb(247 244 237 / var(--seasonal-overlay-opacity));
+}
+.site-theme--christmas .fn-home { background: transparent; }
+.site-theme--christmas .site-main > :is(div:not(.fn-home), form, h1) {
+  background: var(--color-ivory);
+  border-radius: 12px;
+  margin-block: clamp(1rem, 3vw, 2rem);
+}
+.site-theme--christmas .site-main > :is(form, h1) { width: min(calc(100% - 2rem), 960px); margin-inline: auto; padding: clamp(1.25rem, 4vw, 3rem); }
+.site-theme--christmas .site-main > :is(div:not(.fn-home), form, h1) { max-width: calc(100% - 2rem); }
+.seasonal-preview {
+  position: fixed; z-index: 30;
+  right: max(.75rem, env(safe-area-inset-right)); bottom: max(.75rem, env(safe-area-inset-bottom));
+  display: flex; flex-wrap: wrap; align-items: center; gap: .25rem .75rem;
+  width: fit-content; max-width: calc(100% - 1.5rem); margin: 0; padding: .35rem .8rem;
+  background: var(--color-ivory); border: 1px solid var(--color-border); border-radius: 8px;
+  box-shadow: 0 3px 15px rgb(48 45 40 / 12%); font-size: 1rem;
+}
+.seasonal-preview legend { float: none; width: auto; padding: 0 .25rem; margin: 0; font-size: 1rem; }
+.seasonal-preview label { display: flex; align-items: center; gap: .35rem; min-height: 44px; }
+.seasonal-preview input { width: 1rem; height: 1rem; min-height: 0; padding: 0; accent-color: var(--color-olive); }
+.site-theme:has(.seasonal-preview) { padding-bottom: 7rem; }
+@media (max-width: 600px) {
+  .seasonal-background { background-image: url('../assets/christmas-tree-900.jpg'); background-position: 28% 50%; }
+}

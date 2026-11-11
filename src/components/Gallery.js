@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { getMedia } from '../MediaRepository';
 import VideoList from '../containers/VideoList';
 import PhotoList from '../containers/PhotoList';
+import { mergePortfolioPhotos } from '../portfolioImages';
 
 const Gallery = () => {
   const [media, setMedia] = useState([]);
@@ -26,12 +27,12 @@ const Gallery = () => {
   const videos = media.filter(mediaItem => mediaItem.type === 'video' && mediaItem.category !== 'promo' && mediaItem.category !== 'pictureHanging');
   const framingPhotos = media.filter(mediaItem => mediaItem.portfolioGroup === 'LargsJobs');
 
-  const pictureHangingPhotos = media.filter(mediaItem => mediaItem.category === 'HangingPhoto');
+  const pictureHangingPhotos = mergePortfolioPhotos(media.filter(mediaItem => mediaItem.category === 'HangingPhoto'));
   const pictureHangingVideo = media.filter(mediaItem => mediaItem.category === 'pictureHanging');
   return (
     <div className="site-page site-page--wide">
       <h1>Portfolio</h1>
-      <p>It's early days here at Framing Norah so we'll be updating this page when we're not out and about actually hanging mirrors, pictures and lots more. </p>
+      <p>A selection of picture and mirror installations from homes and businesses across Glasgow, Edinburgh and beyond. From single treasured pieces to complete gallery walls and challenging staircases.</p>
       <p>
         You'll also find a growing list of help, advice, articles and updates on our {' '}
         <Link to="/blog">BLOG</Link>.

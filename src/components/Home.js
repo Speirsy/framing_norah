@@ -3,6 +3,9 @@ import './Home.css';
 import { getMedia } from '../MediaRepository';
 import VideoList from '../containers/VideoList';
 import ReviewsCarousel from './ReviewsCarousel';
+import { CHRISTMAS_THEME_ENABLED } from '../seasonalTheme';
+import christmasBanner from '../assets/deck-the-walls-1200.jpg';
+import christmasBannerSmall from '../assets/deck-the-walls-600.jpg';
 import laserLevelPhoto from '../assets/framing-norah-laser-level-1000.jpg';
 import laserLevelPhotoSmall from '../assets/framing-norah-laser-level-600.jpg';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
@@ -50,6 +53,12 @@ const Home = () => {
     <header className="fn-home__hero">
       <div className="fn-home__hero-content">
       <h1>Picture & Mirror Hanging Specialist – Glasgow & Edinburgh</h1>
+      {CHRISTMAS_THEME_ENABLED && <div className="fn-home__christmas">
+        <img src={christmasBanner} srcSet={`${christmasBannerSmall} 600w, ${christmasBanner} 1200w`}
+          sizes="(max-width: 650px) 90vw, 560px" width="1200" height="400"
+          alt="Deck the walls!" decoding="async" />
+        <p>Those pictures you've been meaning to hang? Let's get them up before the guests arrive.</p>
+      </div>}
       <p className="fn-home__lead">Clean, level installations that stay exactly where they should</p>
       </div>
     </header>

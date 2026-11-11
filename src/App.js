@@ -4,6 +4,8 @@ import { onAuthStateChanged } from 'firebase/auth'; // Firebase Auth listener
 import { auth } from './firebase'; // Import your Firebase config
 
 import NavBar from "./components/NavBar";
+import SeasonalTheme from "./components/SeasonalTheme";
+import { CHRISTMAS_THEME_ENABLED } from "./seasonalTheme";
 import About from "./components/About";
 import Home from "./components/Home";
 import Contact from "./components/Contact";
@@ -32,6 +34,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
+      <SeasonalTheme enabled={CHRISTMAS_THEME_ENABLED}>
       <a href="#main-content" className="skip-link">Skip to content</a>
       <NavBar />
       <main id="main-content" className="site-main" tabIndex="-1">
@@ -62,6 +65,7 @@ const App = () => {
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       </main>
+      </SeasonalTheme>
     </BrowserRouter>
   );
 };

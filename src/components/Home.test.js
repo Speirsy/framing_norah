@@ -5,6 +5,9 @@ import { MemoryRouter } from 'react-router-dom';
 import Home from './Home';
 import { getMedia } from '../MediaRepository';
 jest.mock('../MediaRepository', () => ({ getMedia: jest.fn() }));
+let mockChristmasEnabled = true;
+jest.mock('../seasonalTheme', () => ({ get CHRISTMAS_THEME_ENABLED() { return mockChristmasEnabled; } }));
+beforeEach(() => { mockChristmasEnabled = true; });
 jest.mock('./ReviewsCarousel', () => () => <section aria-label="Customer reviews" />);
 jest.mock('react-helmet', () => ({ Helmet: () => null }));
 
@@ -51,7 +54,7 @@ test('ivory homepage preserves its opening and excludes the disabled background 
   expect(header).toHaveClass('fn-home__hero');
   expect(header.nextElementSibling).toHaveClass('fn-home__photos');
   expect(header.nextElementSibling.querySelectorAll('img')).toHaveLength(2);
-  expect(header.querySelector('img')).toBeNull();
+  expect(within(header).queryByAltText('Gallery wall install – Glasgow')).not.toBeInTheDocument();
   expect(header.parentElement).toHaveClass('fn-home__opening');
   expect(within(header.parentElement).getByRole('region', { name: 'Send me a photo for a quick quote today' })).toBeInTheDocument();
   expect(within(header.parentElement).getByRole('link', { name: 'Get a Free Quote' })).toHaveAttribute('href', '/contact');
@@ -73,5 +76,27 @@ test('laser-level photograph precedes reviews with a discreet About link', async
   expect(within(figure).getByRole('link', { name: 'More about me' })).toHaveAttribute('href', '/about');
   expect(within(figure).queryByRole('heading')).not.toBeInTheDocument();
   expect(figure.nextElementSibling).toHaveAttribute('aria-label', 'Customer reviews');
+  await screen.findByRole('heading', { name: 'How It Works' });
+});
+
+test('Christmas banner follows the unchanged H1 and retains the contact action', async () => {
+  getMedia.mockResolvedValue([]);
+  render(<MemoryRouter><Home /></MemoryRouter>);
+  const heading = screen.getByRole('heading', { level: 1 });
+  expect(heading).toHaveTextContent('Picture & Mirror Hanging Specialist – Glasgow & Edinburgh');
+  expect(heading.nextElementSibling).toHaveClass('fn-home__christmas');
+  expect(screen.getByAltText('Deck the walls!')).toHaveAttribute('width', '1200');
+  expect(screen.getByText("Those pictures you've been meaning to hang? Let's get them up before the guests arrive.")).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: 'Get a Free Quote' })).toHaveAttribute('href', '/contact');
+  await screen.findByRole('heading', { name: 'How It Works' });
+});
+test('seasonal switch removes banner and sentence without removing normal content', async () => {
+  mockChristmasEnabled = false;
+  getMedia.mockResolvedValue([]);
+  render(<MemoryRouter><Home /></MemoryRouter>);
+  expect(screen.queryByAltText('Deck the walls!')).not.toBeInTheDocument();
+  expect(screen.queryByText(/Those pictures you've been meaning to hang/)).not.toBeInTheDocument();
+  expect(screen.getByAltText('John aligning framed artwork with a laser level')).toBeInTheDocument();
+  expect(screen.getByRole('heading', { level: 1 })).toHaveTextContent('Picture & Mirror Hanging Specialist');
   await screen.findByRole('heading', { name: 'How It Works' });
 });

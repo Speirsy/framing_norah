@@ -17,10 +17,10 @@ export default function PhotoList({ photos }) {
         {photos?.map((photo, index) => (
           <figure className="photo-gallery__item" key={photo.id || photo.url || index}>
             <button type="button" className="photo-gallery__open"
-              aria-label={`Enlarge ${photo.name || 'project photo'}`} onClick={event => {
+              aria-label={`Enlarge ${photo.name || photo.alt || 'project photo'}`} onClick={event => {
                 opener.current = event.currentTarget; setSelectedPhoto(photo);
               }}>
-              <img src={photo.url} alt={photo.name || photo.description || 'Framing Norah installation'} loading="lazy" />
+              <img src={photo.url} alt={photo.alt || photo.name || photo.description || 'Framing Norah installation'} loading="lazy" />
             </button>
             {photo.name && <figcaption>{photo.name}</figcaption>}
           </figure>
@@ -30,9 +30,9 @@ export default function PhotoList({ photos }) {
         onCancel={event => { event.preventDefault(); setSelectedPhoto(null); }}
         onClick={event => { if (event.target === event.currentTarget) setSelectedPhoto(null); }}>
         <div className="gallery-dialog__content">
-          <header><h2 id="gallery-dialog-title">{selectedPhoto.name || 'Project photo'}</h2>
+          <header><h2 id="gallery-dialog-title">{selectedPhoto.name || selectedPhoto.alt || 'Project photo'}</h2>
             <button type="button" aria-label="Close image" onClick={() => setSelectedPhoto(null)}>×</button></header>
-          <img src={selectedPhoto.url} alt={selectedPhoto.name || selectedPhoto.description || 'Framing Norah installation'} />
+          <img src={selectedPhoto.url} alt={selectedPhoto.alt || selectedPhoto.name || selectedPhoto.description || 'Framing Norah installation'} />
           {selectedPhoto.description && <p>{selectedPhoto.description}</p>}
         </div>
       </dialog>}
