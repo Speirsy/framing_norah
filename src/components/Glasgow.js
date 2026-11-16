@@ -59,7 +59,7 @@ const Glasgow = () => {
       <p>
         I also cover nearby areas including Scotstoun, Knightswood,
         Woodlands, Renfrew, Paisley, Erskine, Old Kilpatrick,
-        and occasionally Edinburgh and wider Scotland for larger installs.
+        and <Link to="/picture-hanging-edinburgh">Edinburgh</Link> and wider Scotland for larger installs.
       </p>
 
       <p>

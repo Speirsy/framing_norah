@@ -21,3 +21,16 @@ test('menu has accessible state, closes after navigation and Escape restores foc
   expect(screen.getByRole('button', { name: /Menu/ })).toHaveAttribute('aria-expanded', 'false');
   expect(screen.getByRole('link', { name: 'About' })).toHaveAttribute('aria-current', 'page');
 });
+
+test('Picture hanging dropdown lists Glasgow and Edinburgh and closes with Escape', () => {
+  render(<MemoryRouter initialEntries={['/']}><NavBar /></MemoryRouter>);
+  const toggle = screen.getByRole('button', { name: /Picture hanging/ });
+  expect(toggle).toHaveAttribute('aria-expanded', 'false');
+  fireEvent.click(toggle);
+  expect(toggle).toHaveAttribute('aria-expanded', 'true');
+  expect(screen.getByRole('link', { name: 'Glasgow' })).toHaveAttribute('href', '/picture-hanging-glasgow');
+  expect(screen.getByRole('link', { name: 'Edinburgh' })).toHaveAttribute('href', '/picture-hanging-edinburgh');
+  fireEvent.keyDown(toggle, { key: 'Escape' });
+  expect(toggle).toHaveAttribute('aria-expanded', 'false');
+  expect(toggle).toHaveFocus();
+});

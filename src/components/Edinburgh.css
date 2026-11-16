@@ -1,0 +1,18 @@
+.fn-edinburgh__jobs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin: 1.5rem 0 2.5rem;
+}
+.fn-edinburgh__job { margin: 0; }
+.fn-edinburgh__job img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+.fn-edinburgh__job figcaption { margin-top: .6rem; line-height: 1.45; }
+.fn-edinburgh__job figcaption strong { display: block; margin-bottom: .25rem; }
+@media (max-width: 700px) {
+  .fn-edinburgh__jobs { grid-template-columns: minmax(0, 1fr); }
+}

@@ -99,6 +99,8 @@ const Home = () => {
   <p>
   Looking for a <Link to="/picture-hanging-glasgow" className="text-blue-600 underline hover:text-blue-800">
     picture hanger in Glasgow
+  </Link> or <Link to="/picture-hanging-edinburgh" className="text-blue-600 underline hover:text-blue-800">
+    Edinburgh
   </Link>? 
   I provide clean, level installations across the West End and wider city.
 </p>

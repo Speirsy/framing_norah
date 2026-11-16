@@ -18,6 +18,7 @@ import BlogDetails from "./components/BlogDetails";
 import LoginForm from "./components/LoginForm"; // Add a login form for you to log in
 import CV from "./components/CV";
 import Glasgow from "./components/Glasgow";
+import Edinburgh from "./components/Edinburgh";
 // import Banner from "./components/Banner";
 
 const App = () => {
@@ -47,6 +48,7 @@ const App = () => {
         <Route path="/flatpack-assembly-glasgow" element={<FlatPackAssemblyPage />} />
     
         <Route path="/picture-hanging-glasgow" element={<Glasgow />} />
+        <Route path="/picture-hanging-edinburgh" element={<Edinburgh />} />
         
         {/* Public blog list */}
         <Route path="/blog" element={<Blog />} />
