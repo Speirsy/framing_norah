@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
 import './ContactForm.css';
+import PhoneLinks from '../components/PhoneLinks';
+import { trackEvent } from '../utils/analytics';
 
 function ContactForm() {
     const [name, setName] = useState('');
@@ -57,6 +59,7 @@ function ContactForm() {
         }, '3nIfM1I_TSBAb6CzH')
             .then((response) => {
                 // console.log('Email sent successfully:', response);
+                trackEvent('generate_lead', { method: 'contact_form' });
                 setSubmitted(true);
             })
             .catch((error) => {
@@ -73,7 +76,7 @@ function ContactForm() {
              <p>It will help us to help you, and give you a more accurate estimate.</p>
 
               <p style={{ marginTop: '1rem', fontWeight: 'bold' }}>
-               Alternatively, you can call or WhatsApp on 07989 226593
+               Alternatively, you can call or WhatsApp on <PhoneLinks />
              </p>
 
     <p>Click here for suggestions.-</p>

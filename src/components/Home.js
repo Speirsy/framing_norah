@@ -10,6 +10,7 @@ import laserLevelPhoto from '../assets/framing-norah-laser-level-1000.jpg';
 import laserLevelPhotoSmall from '../assets/framing-norah-laser-level-600.jpg';
 import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import { Helmet } from "react-helmet";
+import PhoneLinks from './PhoneLinks';
 
 
 const Home = () => {
@@ -84,7 +85,7 @@ const Home = () => {
         <div className="fn-home__quote-copy">
   <h2 id="fn-home-quote-title" className="fn-home__quote-title">Send me a photo for a quick quote today</h2>
 <p>Text or WhatsApp your wall or frames and I’ll get back to you quickly.</p>
-<p className="fn-home__phone">07989 226593</p>
+<p className="fn-home__phone"><PhoneLinks /></p>
 
         </div>
         <Link to="/contact" className="site-button fn-home__booking">Get a Free Quote</Link>

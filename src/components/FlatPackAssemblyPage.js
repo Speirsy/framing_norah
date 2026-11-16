@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { getMedia } from '../MediaRepository';
 import PhotoList from '../containers/PhotoList';
 import { Helmet } from "react-helmet";
+import PhoneLinks from './PhoneLinks';
 
 const Flatpack = () => {
   const [media, setMedia] = useState([]);
@@ -83,7 +84,7 @@ return (
 
       <h2 className="text-xl font-semibold mt-6 mb-2">Get in Touch</h2>
       <p className="mb-4">
-        Call or message John on <strong>07989 226593</strong><br />
+        Call or message John on <strong><PhoneLinks /></strong><br />
         Or use our <Link to="/contact" className="text-blue-600 underline">contact form</Link> and mention "Flat Pack."
       </p>
 
