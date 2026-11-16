@@ -9,7 +9,7 @@ const CV = () => {
   <div className="site-page">
     <h1>John Speirs</h1>
     <h2>Picture Framer and Hanger</h2>
-    <p>23 Anniesland Crescent, G140YQ | 07989226593 | <a href="mailto:john@framingnorah.com">john@framingnorah.com</a> | <a href="https://framingnorah.com" target="_blank" rel="noopener noreferrer">framingnorah.com</a></p>
+    <p>Glasgow | 07989226593 | <a href="mailto:john@framingnorah.com">john@framingnorah.com</a> | <a href="https://framingnorah.com" target="_blank" rel="noopener noreferrer">framingnorah.com</a></p>
     
     <section>
       <h2>Professional Summary</h2>
