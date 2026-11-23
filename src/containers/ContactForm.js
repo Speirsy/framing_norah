@@ -6,11 +6,22 @@ import './ContactForm.css';
 import PhoneLinks from '../components/PhoneLinks';
 import { trackEvent } from '../utils/analytics';
 
+const LOCATIONS = [
+    'Glasgow - West',
+    'Glasgow - South',
+    'Glasgow - East',
+    'Glasgow - Central',
+    'Edinburgh',
+    'Other',
+];
+
 function ContactForm() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
     const [description, setDescription] = useState('');
+    const [location, setLocation] = useState('');
+    const [otherLocation, setOtherLocation] = useState('');
     const [submitted, setSubmitted] = useState(false);
     const [showIdeas, setShowIdeas] = useState(false);
     const [errors, setErrors] = useState({});
@@ -35,6 +46,11 @@ function ContactForm() {
         } else if (!/^\d+$/.test(phone)) {
             errors.phone = 'Phone must be numeric';
         }
+        if (!location) {
+            errors.location = 'Please choose a location';
+        } else if (location === 'Other' && !otherLocation.trim()) {
+            errors.location = 'Please tell us where you are';
+        }
         if (name.length > 50) {
             errors.name = 'Name must be less than 50 characters';
         }
@@ -48,6 +64,8 @@ function ContactForm() {
         }
     };
 
+    const locationText = location === 'Other' ? `Other - ${otherLocation.trim()}` : location;
+
     const sendEmail = () => {
         // Use your EmailJS Service ID, Template ID, and User ID
         emailjs.send('contact_service', 'contact_form', {
@@ -55,7 +73,10 @@ function ContactForm() {
             from_email: email,
             reply_to: email,
             phone: phone,
-            message: description
+            location: locationText,
+            // Location is also put at the top of the message so it shows in the
+            // email even if the EmailJS template has no {{location}} variable.
+            message: `Location: ${locationText}\n\n${description}`
         }, '3nIfM1I_TSBAb6CzH')
             .then((response) => {
                 // console.log('Email sent successfully:', response);
@@ -106,6 +127,7 @@ function ContactForm() {
                     <p>Name: {name}</p>
                     <p>Email: {email}</p>
                     <p>Phone: {phone}</p>
+                    <p>Location: {locationText}</p>
                     <p>Description: {description}</p>
                     <p>We will be in touch with an estimate very soon. </p>
                 </div>
@@ -132,6 +154,26 @@ function ContactForm() {
                             {errors.phone && <span className="error">{errors.phone}</span>}
                         </label>
                     </div>
+                    <div>
+                        <label>
+                            Location:
+                            <select value={location} onChange={(e) => setLocation(e.target.value)}>
+                                <option value="">Please choose…</option>
+                                {LOCATIONS.map((loc) => (
+                                    <option key={loc} value={loc}>{loc}</option>
+                                ))}
+                            </select>
+                            {errors.location && <span className="error">{errors.location}</span>}
+                        </label>
+                    </div>
+                    {location === 'Other' && (
+                        <div>
+                            <label>
+                                Where are you?
+                                <input type="text" value={otherLocation} onChange={(e) => setOtherLocation(e.target.value)} placeholder="e.g. Paisley, Stirling, Perth" />
+                            </label>
+                        </div>
+                    )}
                     <div>
                         <label>
                             Description:
