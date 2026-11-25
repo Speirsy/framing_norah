@@ -184,7 +184,7 @@ function ContactForm() {
                         <div>
                             <label>
                                 Where are you?
-                                <input type="text" value={otherLocation} onChange={(e) => setOtherLocation(e.target.value)} placeholder="e.g. Paisley, Stirling, Perth" />
+                                <input type="text" value={otherLocation} onChange={(e) => setOtherLocation(e.target.value)} placeholder="e.g. Stirling, Kilmacolm, Ayr" />
                             </label>
                         </div>
                     )}

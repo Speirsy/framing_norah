@@ -12,6 +12,7 @@ const menus = [
     links: [
       ['/picture-hanging-glasgow', 'Glasgow'],
       ['/picture-hanging-edinburgh', 'Edinburgh'],
+      ['/contact', 'Somewhere else?'],
     ],
   },
   {

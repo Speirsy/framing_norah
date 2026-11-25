@@ -30,6 +30,7 @@ test('Areas dropdown lists Glasgow and Edinburgh and closes with Escape', () => 
   expect(toggle).toHaveAttribute('aria-expanded', 'true');
   expect(screen.getByRole('link', { name: 'Glasgow' })).toHaveAttribute('href', '/picture-hanging-glasgow');
   expect(screen.getByRole('link', { name: 'Edinburgh' })).toHaveAttribute('href', '/picture-hanging-edinburgh');
+  expect(screen.getByRole('link', { name: 'Somewhere else?' })).toHaveAttribute('href', '/contact');
   fireEvent.keyDown(toggle, { key: 'Escape' });
   expect(toggle).toHaveAttribute('aria-expanded', 'false');
   expect(toggle).toHaveFocus();
