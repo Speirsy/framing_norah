@@ -25,7 +25,7 @@ test.each([
   ['/about', 'About'], ['/contact', 'Contact Us'], ['/gallery', 'Portfolio'],
   ['/flatpack-assembly-glasgow', 'Flat Pack Assembly in Glasgow & Surrounding Areas'],
   ['/picture-hanging-glasgow', 'Picture Hanging Glasgow'], ['/CV', 'John Speirs'],
-  ['/blog', 'Projects, Help, Ideas, Therapy, Musings...'], ['/unknown-page', '404 - PAGE NOT FOUND'],
+  ['/blog', 'Picture hanging advice'], ['/unknown-page', '404 - PAGE NOT FOUND'],
 ])('route %s retains page content and navigation', async (path, heading) => {
   window.history.replaceState({}, '', path);
   await act(async () => { render(<App />); });

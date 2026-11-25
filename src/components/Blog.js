@@ -19,8 +19,8 @@ const Blog = () => {
 
   return (
     <div className='site-page'>
-      <h1>Projects, Help, Ideas, Therapy, Musings...</h1>
-      <h2>Blogs about picture hanging in Glasgow, framing and life.</h2>
+      <h1>Picture hanging advice</h1>
+      <p>Thirty years of putting things on walls, written down so you don't have to learn it the hard way.</p>
       <BlogList blogs={blogs} /> {/* Show the list of blogs with collapse and "More Blogs" button */}
     </div>
 
