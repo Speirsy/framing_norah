@@ -21,6 +21,8 @@ function ContactForm() {
     const [phone, setPhone] = useState('');
     const [description, setDescription] = useState('');
     const [location, setLocation] = useState('');
+    // Honeypot: hidden from people, but spam bots fill in every field they find.
+    const [website, setWebsite] = useState('');
     const [otherLocation, setOtherLocation] = useState('');
     const [submitted, setSubmitted] = useState(false);
     const [showIdeas, setShowIdeas] = useState(false);
@@ -53,6 +55,12 @@ function ContactForm() {
         }
         if (name.length > 50) {
             errors.name = 'Name must be less than 50 characters';
+        }
+
+        if (website) {
+            // Bot filled the hidden field: show the normal thank-you but send nothing.
+            setSubmitted(true);
+            return;
         }
 
         if (Object.keys(errors).length === 0) {
@@ -133,6 +141,12 @@ function ContactForm() {
                 </div>
             ) : (
                 <form onSubmit={handleSubmit}>
+                    <div className="contact-form__hp" aria-hidden="true">
+                        <label>
+                            Website
+                            <input type="text" name="website" tabIndex={-1} autoComplete="off" value={website} onChange={(e) => setWebsite(e.target.value)} />
+                        </label>
+                    </div>
                     <div>
                         <label>
                             Name:
@@ -182,6 +196,11 @@ function ContactForm() {
                     </div>
                     <div>
                         <button type="submit">Submit</button>
+                        {Object.keys(errors).length > 0 && (
+                            <p className="contact-form__summary" role="alert">
+                                <strong>Not sent yet.</strong> {Object.values(errors).join('. ')}.
+                            </p>
+                        )}
                     </div>
                 </form>
             )}

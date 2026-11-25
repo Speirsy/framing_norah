@@ -27,9 +27,23 @@ test('Other location shows a text box and is sent with the enquiry', async () =>
   fireEvent.change(screen.getByLabelText('Location:'), { target: { value: 'Other' } });
   fireEvent.click(screen.getByRole('button', { name: 'Submit' }));
   expect(await screen.findByText('Please tell us where you are')).toBeInTheDocument();
+  expect(screen.getByRole('alert')).toHaveTextContent('Not sent yet. Please tell us where you are.');
   expect(emailjs.send).not.toHaveBeenCalled();
   fireEvent.change(screen.getByLabelText('Where are you?'), { target: { value: 'Stirling' } });
   fireEvent.click(screen.getByRole('button', { name: 'Submit' }));
   expect(await screen.findByText('Thank you for your submission')).toBeInTheDocument();
   expect(emailjs.send.mock.calls[0][2].location).toBe('Other - Stirling');
+});
+
+test('hidden honeypot field blocks bot submissions without sending', async () => {
+  emailjs.send.mockClear();
+  const { container } = render(<ContactForm />);
+  fireEvent.change(screen.getByLabelText('Name:'), { target: { value: 'Bot' } });
+  fireEvent.change(screen.getByLabelText('Email:'), { target: { value: 'bot@example.test' } });
+  fireEvent.change(screen.getByLabelText('Phone:'), { target: { value: '01234567890' } });
+  fireEvent.change(screen.getByLabelText('Location:'), { target: { value: 'Edinburgh' } });
+  fireEvent.change(container.querySelector('input[name="website"]'), { target: { value: 'spam' } });
+  fireEvent.click(screen.getByRole('button', { name: 'Submit' }));
+  expect(await screen.findByText('Thank you for your submission')).toBeInTheDocument();
+  expect(emailjs.send).not.toHaveBeenCalled();
 });

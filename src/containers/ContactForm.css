@@ -1,2 +1,4 @@
 .contact-form { max-width: 680px; }
 .contact-form ul { background: var(--color-stone); padding: 1.25rem 1.25rem 1.25rem 2.5rem; border-radius: 10px; }
+.contact-form__hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
+.contact-form__summary { margin-top: .75rem; padding: .75rem 1rem; border-left: 4px solid #b3261e; background: #fdf0ef; color: #8c1d18; border-radius: 6px; }
